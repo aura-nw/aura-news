@@ -126,8 +126,8 @@
 }
 @media (min-width: 992px) {
     .navbar .nav-menu .nav-item .dropdown-menu {
-        left: -24px;
-        right: 0;
+        left: 0;
+        right: -24px;
         background: rgba(20, 20, 22, 0.95);
         box-shadow: 0 10px 30px 20px rgba(0, 0, 0, 0.24);
     }
