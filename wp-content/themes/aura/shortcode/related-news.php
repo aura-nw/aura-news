@@ -1,6 +1,8 @@
 <?php
 function createRelatedNews($attr) {
+    // get category by postID param
     $category = get_the_terms($attr['id'], 'category')[0];
+    // get posts which belong to the category
     $args = [
         'posts_per_page'   => 4,
         'post_type' => 'news',

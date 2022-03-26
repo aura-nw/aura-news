@@ -15,4 +15,5 @@ require_once(get_template_directory() . '/core/init.php');
 include_once(get_template_directory() . '/post-type/pt-news.php');
 // Include short-code
 include_once(get_template_directory() . '/shortcode/related-news.php');
+include_once(get_template_directory() . '/shortcode/shared-news.php');
 ?>

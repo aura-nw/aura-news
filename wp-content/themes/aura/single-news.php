@@ -8,7 +8,7 @@ while ( have_posts() ) :
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="heading">breadcrumb</div>
+                    <div class="heading"><a href="/">breadcrumb</a></div>
                     <!-- print post title -->
                     <div class="heading"><?php echo get_the_title(); ?></div>
                     <div class="heading">
@@ -46,8 +46,8 @@ while ( have_posts() ) :
                     </div>
                 </div>
                 <div class="col-4">
-                    <div><?php echo do_shortcode('news_share') ?></div>
-                    <div><?php echo do_shortcode('[news_related id="'.get_the_ID().'"]') ?></div>
+                    <div><?php echo do_shortcode("[news_share id='156']") ?></div>
+                    <div><?php echo do_shortcode("[news_related id='".get_the_ID()."']") ?></div>
                 </div>
             </div>
             <div class="row">
