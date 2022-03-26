@@ -1,0 +1,123 @@
+html, body {
+    font-size: 10px;
+}
+h1, .h1 {
+    font-size: 9.6rem !important;
+    line-height: 12rem !important;
+    font-family: 'Redig' !important;
+    display: inline-block;
+}
+h2, .h2 {
+    font-size: 6.4rem !important;
+    line-height: 8rem !important;
+    font-family: 'Redig' !important;
+    display: inline-block;
+}
+h3, .h3 {
+    font-size: 4.8rem !important;
+    line-height: 5.6rem !important;
+    font-family: 'Redig' !important;
+}
+h4, .h4 {
+    font-size: 3.2rem !important;
+    line-height: 3.8rem !important;
+    font-family: 'Redig' !important;
+}
+.title {
+    font-size: 3.2rem !important;
+    line-height: 4rem !important;
+    font-family: 'SFProDisplay' !important;
+}
+.sub-text {
+    font-size: 2.4rem !important;
+    line-height: 3.2rem !important;
+    font-family: 'system-ui' !important;
+}
+.body {
+    font-size: 1.6rem !important;
+    line-height: 2.4rem !important;
+    font-family: 'SFProDisplay' !important;
+}
+.small-text {
+    font-size: 1.2rem !important;
+    line-height: 1.6rem !important;
+    font-family: 'SFProDisplay' !important;
+}
+@media (max-width: 991.98px) {
+    .h1-mob {
+        font-size: 9.6rem !important;
+        line-height: 12rem !important;
+        font-family: 'Redig' !important;
+    }
+    .h2-mob {
+        font-size: 6.4rem !important;
+        line-height: 8rem !important;
+        font-family: 'Redig' !important;
+    }
+    .h3-mob {
+        font-size: 4.8rem !important;
+        line-height: 5.6rem !important;
+        font-family: 'Redig' !important;
+    }
+    .h4-mob {
+        font-size: 3.2rem !important;
+        line-height: 3.8rem !important;
+        font-family: 'Redig' !important;
+    }
+    .title-mob {
+        font-size: 3.2rem !important;
+        line-height: 4rem !important;
+        font-family: 'SFProDisplay' !important;
+    }
+    .sub-text-mob {
+        font-size: 2.4rem !important;
+        line-height: 3.2rem !important;
+        font-family: 'system-ui' !important;
+    }
+    .body-mob {
+        font-size: 1.6rem !important;
+        line-height: 2.4rem !important;
+        font-family: 'SFProDisplay' !important;
+    }
+    .small-text-mob {
+        font-size: 1.2rem !important;
+        line-height: 1.6rem !important;
+        font-family: 'SFProDisplay' !important;
+    }
+}
+.text--white {
+    color: var(--aura-white) !important;
+}
+.text--light-gray {
+    color: var(--aura-light-gray) !important;
+}
+.text--dark-gray {
+    color: var(--aura-dark-gray) !important;
+}
+.text--black {
+    color: var(--aura-black) !important;
+}
+.text--black-1 {
+    color: var(--aura-black-1) !important;
+}
+.text--green {
+    color: var(--aura-green) !important;
+}
+.text--primary-4 {
+    color: var(--aura-primary-4) !important;
+}
+.text--neutrals-2 {
+    color: var(--aura-neutrals-2) !important;
+}
+.text--neutrals-3 {
+    color: var(--aura-neutrals-3) !important;
+}
+.text--neutrals-4 {
+    color: var(--aura-neutrals-4) !important;
+}
+.text--neutrals-6 {
+    color: var(--aura-neutrals-6) !important;
+}
+.text--neutrals-8 {
+    color: var(--aura-neutrals-8) !important;
+}
