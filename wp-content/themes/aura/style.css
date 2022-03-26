@@ -1,0 +1,22 @@
+/*
+Theme Name: Aura - Aura Network Insights
+Author: FPT.co
+Description: Aura - news
+Version: 1.0
+tags:
+Textdomain: aura
+ */
+@import "assets/styles/_variables.css";
+@import "assets/styles/_reboot.scss";
+@import "assets/fonts/Redig/Redig.css";
+@import "assets/fonts/SfProDisplay/SfProDisplay.css";
+@import "assets/styles/pages/header.css";
+@import "assets/styles/pages/footer.css";
+@import "assets/styles/pages/news-detail.css";
+@import "assets/styles/pages/news.css";
+a:hover, a:focus, button:hover, button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.page > h3:first-child { display: none}
