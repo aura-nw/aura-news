@@ -1,10 +1,10 @@
-$(document).ready(function(){
-    $('.category-list').slick({
-        infinite: true,
-        slidesToShow: 7,
-        slidesToScroll: 1
-    });
-});
+// $(document).ready(function(){
+//     $('.category-list').slick({
+//         infinite: true,
+//         slidesToShow: 7,
+//         slidesToScroll: 1
+//     });
+// });
 
 
 
