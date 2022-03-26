@@ -47,7 +47,7 @@ while ( have_posts() ) :
                 </div>
                 <div class="col-4">
                     <div><?php echo do_shortcode('news_share') ?></div>
-                    <div><?php echo do_shortcode('news_related') ?></div>
+                    <div><?php echo do_shortcode('[news_related id="'.get_the_ID().'"]') ?></div>
                 </div>
             </div>
             <div class="row">
