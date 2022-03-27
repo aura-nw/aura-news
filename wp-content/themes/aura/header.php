@@ -12,7 +12,7 @@
 </head>
 <body <?php body_class(); ?>>
 <nav class="navbar navbar-expand-lg py-4">
-    <div class="container-fluid mx-4 mx-lg-10 px-0">
+    <div class="container-fluid mx-3 mx-lg-5">
         <a class="d-lg-none" href="#">
             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
@@ -22,7 +22,7 @@
                 aria-controls="headerMenu" aria-expanded="false">
             <i class="icon icon-close">X</i>
         </button>
-        <div class="collapse navbar-collapse pt-10 pb-6 py-md-0 mt-md-0" id="headerMenu">
+        <div class="collapse navbar-collapse" id="headerMenu">
             <div class="d-lg-flex justify-content-center justify-content-lg-start w-100">
                 <ul class="navbar-nav nav-menu align-items-center">
                     <li class="nav-item d-none d-lg-block">
@@ -36,14 +36,7 @@
                         <div class="divider divider-vertical"></div>
                     </li>
                     <li class="nav-item mx-lg-4 h4 h3-mob mb-12 mb-md-0 mr-md-8 dropdown">
-                        <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuFeatures" data-bs-toggle="dropdown" aria-expanded="false">
-                            FEATURES
-                        </button>
-                        <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuFeatures">
-                            <li><a class="dropdown-item" target="_blank" href="https://safe.aura.network/welcome">Safe</a></li>
-                            <li><a class="dropdown-item" target="_blank" href="https://docs.aura.network/">Docs</a></li>
-                            <li><a class="dropdown-item" target="_blank" href="https://explorer.aura.network/">Explorer</a></li>
-                        </ul>
+                        <a class="nav-link m-auto" href="/">HOME</a>
                     </li>
                     <li class="nav-item mx-lg-4 h4 h3-mob mb-12 my-md-0 mr-md-8">
                         <div class="dropdown">
