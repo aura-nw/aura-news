@@ -6,10 +6,11 @@ Version: 1.0
 tags:
 Textdomain: aura
  */
-@import "assets/styles/_variables.css";
-@import "assets/styles/_reboot.scss";
 @import "assets/fonts/Redig/Redig.css";
 @import "assets/fonts/SfProDisplay/SfProDisplay.css";
+@import "assets/styles/_variables.css";
+@import "assets/styles/_reboot.css";
+@import "assets/styles/_typo.css";
 @import "assets/styles/pages/header.css";
 @import "assets/styles/pages/footer.css";
 @import "assets/styles/pages/news-detail.css";
