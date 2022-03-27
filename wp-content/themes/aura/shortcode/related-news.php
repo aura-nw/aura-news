@@ -13,6 +13,9 @@ function createRelatedNews($attr)
                 'terms' => $category->term_id,
             ],
         ],
+        'exclude' => [
+            $attr['id']
+        ]
     ];
     $postArr = get_posts($args);
     $htmlRender = '
