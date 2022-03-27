@@ -58,9 +58,8 @@ section.news-details .featured-image img {
     height: 480px;
     border-radius: 18px;
 }
-section.news-details .social-group .elementor-row {
-    justify-content: left !important;
-    margin: 12px -10px;
+section.news-details .social-group {
+    margin: 0 -16px;
 }
 .breadcrumb a:hover,
 .breadcrumb a {

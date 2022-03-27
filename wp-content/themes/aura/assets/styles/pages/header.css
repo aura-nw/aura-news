@@ -178,4 +178,6 @@
     background-clip: content-box, border-box;
     box-shadow: 2px 1000px 1px #141416 inset;
 }
- 
+.navbar .social-group .elementor-container.elementor-column-gap-default {
+    justify-content: center;
+}

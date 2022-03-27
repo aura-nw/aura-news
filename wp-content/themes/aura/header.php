@@ -74,7 +74,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex-shrink-0 mt-5 mt-lg-0">
+            <div class="flex-shrink-0 mt-5 mt-lg-0 social-group">
                 <?php echo do_shortcode('[elementor-template id="171"]'); ?>
             </div>
         </div>

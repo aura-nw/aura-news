@@ -59,7 +59,7 @@ while (have_posts()) :
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-12">
+            <div class="col-5 col-md-3 col-xl-2">
                 <div class="body bold">Follow us on:</div>
                 <div class="social-group">
                     <?php echo do_shortcode('[elementor-template id="171"]'); ?>
