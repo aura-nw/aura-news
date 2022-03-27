@@ -6,11 +6,12 @@
 //     });
 // });
 
+$(document).ready(function(){
+    hoverMenu();
+});
 
-document.addEventListener("DOMContentLoaded", function(){
-// make it as accordion for smaller screens
+function hoverMenu() {
     if (window.innerWidth > 992) {
-
         document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
 
             everyitem.addEventListener('mouseover', function(e){
@@ -35,5 +36,4 @@ document.addEventListener("DOMContentLoaded", function(){
         });
 
     }
-// end if innerWidth
-});
+}

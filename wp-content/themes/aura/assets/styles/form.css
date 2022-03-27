@@ -1,0 +1,41 @@
+.aura-form .form-control:focus {
+    box-shadow: none;
+}
+.aura-form.single-input-field form {
+    position: relative;
+}
+.aura-form.single-input-field form  input {
+    width: 100%;
+    outline: none !important;
+    padding: 6px 12px;
+    border: 2px solid var(--aura-neutrals-3);
+    border-radius: 90px;
+    background-color: transparent !important;
+    color: var(--aura-light-gray);
+    font-size: 14px;
+    line-height: 24px;
+    font-family: SFProDisplay;
+    padding-right: 50px;
+}
+.aura-form.single-input-field form input[type='submit'] {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    background: url("../../assets/images/backgrounds/circle-color.png");
+    background-size: contain;
+}
+.ajax-loader {display:none !important;}
+.wpcf7-response-output {
+    margin: 8px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    color: var(--bs-red);
+}
+.wpcf7-not-valid-tip {
+    margin-top: 8px;
+}

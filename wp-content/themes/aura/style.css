@@ -11,6 +11,7 @@ Textdomain: aura
 @import "assets/styles/_variables.css";
 @import "assets/styles/_reboot.css";
 @import "assets/styles/_typo.css";
+@import "assets/styles/form.css";
 @import "assets/styles/pages/header.css";
 @import "assets/styles/pages/footer.css";
 @import "assets/styles/pages/news-detail.css";

@@ -11,9 +11,9 @@
 	<?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
-<nav class="navbar navbar-expand-lg py-4" id="headerMenuNavbar">
+<nav class="navbar navbar-expand-lg py-4 pb-5 pb-lg-4" id="headerMenuNavbar">
     <div class="container-fluid">
-        <a class="d-lg-none" href="#">
+        <a class="d-lg-none" href="/">
             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                  alt="Aura Logo">
@@ -26,7 +26,7 @@
             <div class="d-lg-flex justify-content-center justify-content-lg-start w-100">
                 <ul class="navbar-nav nav-menu align-items-center">
                     <li class="nav-item d-none d-lg-block">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="/">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                                  alt="Aura Logo">
@@ -44,8 +44,8 @@
                                 LABS
                             </button>
                             <ul class="dropdown-menu body sub-text-mob"  aria-labelledby="dropdownMenuPartners">
-                                <li><button class="dropdown-item">Partners</button></li>
-                                <li><button class="dropdown-item">Advisors</button></li>
+                                <li><a class="dropdown-item" target="_blank" href="https://safe.aura.network/welcome">Safe</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="https://explorer.aura.network/">Explorer</a></li>
                             </ul>
                         </div>
                     </li>
@@ -55,11 +55,9 @@
                                 ANNOUNCEMENT
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
-                                <li><button type="button" class="dropdown-item">Insights</button></li>
-                                <!--                    <li><a class="dropdown-item" target="_blank" href="#">Insights</a></li>-->
-                                <li><a class="dropdown-item" target="_blank" href="https://github.com/aura-nw/whitepaper/blob/main/release/Aura_Network___whitepaper.pdf">Whitepaper</a></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://docs.aura.network/blog">Research</a></li>
-                                <li><button class="dropdown-item">FAQs</button></li>
+                                <li><button class="dropdown-item">Partnership</button></li>
+                                <li><button class="dropdown-item">News</button></li>
+                                <li><a class="dropdown-item" target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></li>
                             </ul>
                         </div>
                     </li>
@@ -69,9 +67,8 @@
                                 GUIDE
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuAbout">
-                                <li><button class="dropdown-item">Meet Our Team</button></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://discord.com/login?redirect_to=%2Fchannels%2F925227249408557086%2F925227249408557089">Contact us</a></li>
+                                <li><button class="dropdown-item">NFT 101</button></li>
+                                <li><a class="dropdown-item" target="_blank" href="https://aura.network#faqs">FAQs</a></li>
                             </ul>
                         </div>
                     </li>

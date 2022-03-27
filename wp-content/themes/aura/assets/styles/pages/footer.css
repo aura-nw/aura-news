@@ -61,11 +61,13 @@ footer .footer__contact .contact__title {
 }
 footer .footer__cta {
     padding-top: 40px;
+    padding-bottom: 40px;
     color: var(--aura-white);
     border-bottom: 1px solid var(--aura-neutrals-3);
 }
 @media (min-width: 992px) {
     footer .footer__cta {
+        padding-bottom: 0;
         padding-left: 47px;
         border: none;
     }
@@ -79,7 +81,7 @@ footer .footer__cta .text-gradient {
     -webkit-text-fill-color: transparent;
 }
 @media (max-width: 992px) {
-    footer .footer__cta .-max-width-256 {
+    footer .-max-width-256 {
         max-width: 256px;
     }
 }

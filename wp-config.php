@@ -58,6 +58,10 @@ define( 'LOGGED_IN_SALT',   'dp#+G4F[!( <T_$,|CO9$dG(un7~HR0.<Z!v$RExt9J8Z]_G8a5
 define( 'NONCE_SALT',       'SGmN]e.10R.U%nSxnfzL0WT6zQw(tM(DRP2uX:1JQm4CQSO@=){&[6>(N[3Giu9h' );
 
 /**#@-*/
+// Remove wp_cf7 auto add <p> tag
+define( 'WPCF7_AUTOP', false );
+// show response of cf7
+define( 'WPCF7_LOAD_JS', false );
 
 /**
  * WordPress database table prefix.

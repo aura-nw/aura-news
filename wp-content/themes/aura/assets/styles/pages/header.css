@@ -151,6 +151,7 @@
 @media (min-width: 992px) {
     .navbar.expanded {
         bottom: unset;
+        overflow-y: unset;
     }
 }
 .navbar .aura-btn {
