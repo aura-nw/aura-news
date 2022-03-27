@@ -15,8 +15,9 @@ function createRelatedNews($attr) {
     ];
     $postArr = get_posts( $args );
     $htmlRender = '
-    <div class="news-related">
+    <div class="news-related" >
         <div class="sub-text">Related Posts</div>
+        <div id="news-related-list" class="news-related-list">
     ';
     if($postArr > 0) {
         foreach ($postArr as $post) {
@@ -30,6 +31,7 @@ function createRelatedNews($attr) {
         }
     }
     $htmlRenderEnd = '
+        </div>
     </div>
     ';
     wp_reset_query();
