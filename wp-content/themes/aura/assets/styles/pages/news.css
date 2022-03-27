@@ -1,44 +1,117 @@
+section.news {
+    margin-bottom: 100px;
+}
 
-.banner-hero{
+section.news .banner-hero {
     margin-bottom: 5.4rem;
+    position: relative;
 }
 
-.container{
-    width: 80%;
+section.news .banner-hero img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+@media (min-width: 768px) {
+    section.news .banner-hero img {
+        object-fit: cover;
+    }
+}
+@media (min-width: 992px) {
+    section.news .banner-hero img {
+        height: 775px;
+    }
+}
+section.news .banner-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
 }
 
-.tab-content a {
+section.news .banner-info .sub-title span {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    background: var(--aura-gradient-simple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+}
+
+section.news .banner-info .sub-title img {
+    width: 20px;
+    height: 20px;
+}
+
+section.news .tab-content a {
+    position: relative;
     margin-right: 4.8rem;
     color: #777E90;
+    transition: color .35s ease-in-out;
 }
 
-.active {
-    padding-bottom: 10px;
-    border-bottom: 2px solid;
-    border-image: linear-gradient(108.46deg, #5EE6D0 12.51%, #BFC6FF 51.13%, #FFBA69 87.49%) 1 stretch;
-    color: #FCFCFD !important;
+
+section.news .tab-content a:before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background: var(--aura-gradient-simple);
+    transition: width .35s ease-in-out;
 }
 
-.post-box {
-    margin: auto;
-    margin-top: 6.6rem;
+section.news .tab-content a.active, section.news .tab-content a:hover {
+    color: var(--aura-white);
 }
 
-.post-content {
-    margin-bottom: 7.4rem;
-    padding: 0 3rem;
+section.news .tab-content a.active:before, section.news .tab-content a:hover:before {
+    width: 100%;
 }
 
-.post-content a {
+section.news .post-box {
+    margin-top: 45px;
+    margin-left: -22.5px;
+    margin-right: -22.5px;
+}
+
+section.news .post-content {
     color: #FCFCFD;
+    display: block;
+    text-decoration: none;
+    padding: 0 16px;
+    transition: all .35s ease-in-out;
 }
 
-.post-content .item-post-time {
+section.news .post-content:hover {
+    transform: translate3D(3px, -3px, 0);
+}
+
+section.news .post-content .post-item {
+    border-radius: 19px;
+    transition: box-shadow .35s ease-in-out;
+}
+section.news .post-content:hover .post-item {
+    box-shadow: 25px 13px 20px -12px rgb(108 97 97 / 40%);
+
+}
+
+section.news .post-content .post-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 19px;
+    background-color: var(--aura-black);
+}
+
+section.news .post-content .item-post-time {
     font-size: 1.4rem;
     line-height: 2.4rem;
 }
 
-.post-content .item-post-txt {
+section.news .post-content .item-post-txt {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -48,51 +121,57 @@
     color: #777E90;
 }
 
-.search-bar-form {
+section.news .search-bar-form {
     position: relative;
     text-align: right;
 }
 
-.search-bar-form button {
+section.news .search-bar-form button {
     width: 20px;
     height: 44px;
-    background: url(../../images/icons/color/burger.png) center no-repeat;
+    background: url(../../images/icons/basic/seach.png) center no-repeat;
     position: absolute;
     right: 15px;
 }
 
-#search-bar {
+section.news #search-bar {
     width: 100%;
-    max-width: 400px;
+    padding: 10px 15px;
+    padding-right: 60px;
     color: white;
     border-radius: 12px;
     border-style: solid;
     border-width: 1px;
-    padding: 10px 15px;
     background-color: #2d2d2d;
     height: 44px;
     font-size: 1.6rem;
     line-height: 2.4rem;
 }
 
-@media (max-width: 600px) {
-    .tab-content{
+section.news #search-bar::placeholder {
+    color: var(--aura-white);
+}
+
+@media (max-width: 992.99px) {
+    section.news .post-content {
+        padding: 0;
+        padding-bottom: 32px;
+    }
+    section.news .tab-content{
         text-align: center;
         margin-bottom: 3rem;
         width: 100%;
     }
-    .tab-content a {
+    section.news .tab-content a {
         margin-right: 1rem;
         font-size: 2.5rem !important;
     }
-    .post-box {
+    section.news .post-box {
         margin-top: 3.6rem !important;
+        margin-left: 0;
+        margin-right: 0;
     }
-    .post-content {
-        margin-bottom: 3.4rem !important;
-        padding: 0px !important;
-    }
-    .sub-text{
+    section.news .sub-text{
         font-size: 2rem !important;
         line-height: 2.7rem !important;
     }

@@ -1,54 +1,45 @@
 <?php
     get_header();
+    global $wp_query;
+    $resultNumber = $wp_query->found_posts;
+    $resultString = $resultNumber > 1 ? ' Results' : ' Result';
 ?>
 
-<section class="container search-container">
+<section class="container search-container news">
     <div class="row">
         <h2 class="h2 d-flex justify-content-center">
-            We Found 2 Results With "Aura"
+            We Found <?php echo $resultNumber . $resultString; ?> With "<?php echo get_query_var('s'); ?>"
         </h2>
     </div>
 
     <div class="row mt-5">
-        <div class="col-4">
-            <div class="card text-white bg-primary mb-3 " style="max-width: 100rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <?php
+        if ( have_posts() ) : //
+            while( have_posts() ) : the_post();
+                $post_title = get_the_title();
+                $post_link = get_the_permalink();
+                ?>
+                <div class="col-lg-4 col-12">
+                    <a href="<?php echo $post_link ?>" class="post-content">
+                        <div class="post-item mb-5 pb-4">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
+                            <div class="heading d-flex align-items-center mt-4">
+                                <div class="author-avatar ms-0">
+                                    <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
+                                </div>
+                                <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
+                            </div>
+                            <div class="sub-text mt-4 fw-bold"><?php echo $post_title ?></div>
+                            <div class="item-post-time my-sm-2"><?php echo get_the_date() ?></div>
+                            <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-4">
-            <div class="card text-white bg-primary mb-3 " style="max-width: 100rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="card text-white bg-primary mb-3 " style="max-width: 100rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="card text-white bg-primary mb-3 " style="max-width: 100rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;?>
     </div>
 </section>
 

@@ -47,39 +47,57 @@ $thePostArr = query_posts($args);
 ?>
 <section class="news">
     <div class="banner-hero">
-        <div class="banner-info">
-            <?php
-            // get custom field in Page News (belong to banner)
-            $subTitle = get_field( "sub_title" );
-            $title = get_field( "title" );
-            $desc = get_field( "description" );
-            ?>
-            <div class="sub-title"><?php echo $subTitle ?></div>
-            <div class="title"><?php echo $title ?></div>
-            <div class="desc"><?php echo $desc ?></div>
+        <div class="container banner-info d-none d-lg-block">
+            <div class="row">
+                <div class="col-12">
+                    <?php
+                    // get custom field in Page News (belong to banner)
+                    $subTitle = get_field( "sub_title" );
+                    $title = get_field( "title" );
+                    $desc = get_field( "description" );
+                    ?>
+                    <div class="sub-title d-flex align-items-center">
+                        <span><?php echo $subTitle ?></span>
+                        <img src="<?php echo IMAGE_URL.'/icons/color/check-decagram.png' ?>" alt="" class="ms-3">
+                    </div>
+                    <h2 class=""><?php echo $title ?></h2>
+                    <div class="body text--light-gray mt-4 fw-bold"><?php echo $desc ?></div>
+                </div>
+            </div>
         </div>
-        <img src="https://via.placeholder.com/665" alt="Banner Image with fixed height" width="100%" style="height: 665px">
+        <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>">
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-9 col-sm-12">
+            <div class="col-lg-9 col-12">
                 <div class="category-list d-flex">
                     <?php
                     // loop category array -> print all category
-                    foreach ($categoryArr as $cat) {
+                    foreach ($categoryArr as $key=>$cat   ) {
                         ?>
                         <div class="tab-content">
-                            <a href="/?category=<?php echo $cat->slug ?>" class="h4 text-decoration-none active"><?php echo $cat->name; ?></a>
+                            <a href="/?category=<?php echo $cat->slug ?>"
+                               class="h4 text-decoration-none
+                               <?php
+                               if(!isset($_GET['category']) && $key == 0) {
+                                   echo 'active';
+                               } else if (isset($_GET['category']) && $_GET['category'] == $cat->slug) {
+                                   echo 'active';
+                               }
+                               ?>"><?php echo $cat->name; ?>
+                            </a>
                         </div>
                         <?php
                     }
                     ?>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12">
-                <form class="search-bar-form">
-                    <input id="search-bar" type="text" placeholder="Search..." />
-                    <button style="background: url("../../images/icons/color/burger.png") center no-repeat;"></button>
+            <div class="col-lg-3 col-12">
+                <form class="search-bar-form text-start text-lg-end"
+                      method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+                    <input id="search-bar" type="text" name="s" placeholder="Search..." />
+                    <input type="hidden" name="post_type" value="news" />
+                    <button type="submit" </button>
                 </form>
             </div>
         </div>
@@ -91,19 +109,20 @@ $thePostArr = query_posts($args);
                     $post_title = get_the_title();
                     $post_link = get_the_permalink();
                     ?>
-                    <div class="col-md-4 col-sm-12 post-content">
-                        <a href="<?php echo $post_link ?>" class="text-decoration-none">
-                            <img src="https://via.placeholder.com/210" alt="Banner Image with fixed height" width="100%" style="height: 210px">
-                            <!--                                 <div class="card-item">
-                                    <?php echo $post_title ?>
-                                </div> -->
-                            <div class="heading d-flex align-items-center mt-3">
-                                <div class="author-avatar"><img alt="" src="https://secure.gravatar.com/avatar/b98d69303be547bb77a999f8a65749e4?s=32&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/b98d69303be547bb77a999f8a65749e4?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy"></div>
-                                <div class="author-name body">admin</div>
+                    <div class="col-lg-4 col-12">
+                        <a href="<?php echo $post_link ?>" class="post-content">
+                            <div class="post-item mb-5 pb-4">
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
+                                <div class="heading d-flex align-items-center mt-4">
+                                    <div class="author-avatar ms-0">
+                                        <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
+                                    </div>
+                                    <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
+                                </div>
+                                <div class="sub-text mt-4 fw-bold"><?php echo $post_title ?></div>
+                                <div class="item-post-time my-sm-2"><?php echo get_the_date() ?></div>
+                                <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
                             </div>
-                            <div class="sub-text">Strategic Partnership Announcement: Aura Network partners with Ecomobi</div>
-                            <div class="item-post-time my-sm-2">March 21,2022</div>
-                            <div class="body item-post-txt">Today Aura Network has recently announced its next strategic partner test test test test test test test test test test</div>
                         </a>
                     </div>
                 <?php

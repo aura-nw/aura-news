@@ -13,7 +13,7 @@ footer .footer__menu {
     footer .footer__menu {
         border: none;
         margin-bottom: 100px;
-        padding-right: 40px;
+        padding-right: 20px;
         padding-bottom: 0;
     }
     footer .footer__menu .title {
@@ -68,7 +68,7 @@ footer .footer__cta {
 @media (min-width: 992px) {
     footer .footer__cta {
         padding-bottom: 0;
-        padding-left: 47px;
+        padding-left: 20px;
         border: none;
     }
     footer .footer__cta .footer__cta-contain {

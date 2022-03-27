@@ -18,12 +18,12 @@ function createShareNews($attr)
         <div class="sub-text">Share Post</div>
         <div class="social-btn-group">
             <a href="' . $telegramLink . '">
-                <img src="' . $telegramIcon . '" alt="" width="24" height="24">
+                <img src="' . $telegramIcon . '" alt="" width="18" height="18">
             </a>
             <a href="' . $twitterLink . '">
-                <img src="' . $twitterIcon . '" alt="" width="24" height="24">
+                <img src="' . $twitterIcon . '" alt="" width="18" height="18">
             <a href="' . $facebookLink . '">
-                <img src="' . $facebookIcon . '" alt="" width="24" height="24">
+                <img src="' . $facebookIcon . '" alt="" width="18" height="18">
             </a>
         </div>
     </div>

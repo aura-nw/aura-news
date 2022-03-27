@@ -21,7 +21,7 @@ function createRelatedNews($attr)
     $htmlRender = '
     <div class="news-related">
         <div class="sub-text">Related Posts</div>
-        <div id="news-related-list" class="news-related-list">
+        <div id="news-related-list" class="news-related-list mb-2 d-lg-none">
     ';
     if ($postArr > 0) {
         foreach ($postArr as $post) {
@@ -36,7 +36,25 @@ function createRelatedNews($attr)
             ';
         }
     }
-    $htmlRenderEnd = '
+    $htmlRender = $htmlRender.'
+        </div>
+        <div class="news-related-list mb-2 d-none d-lg-block">';
+
+    if ($postArr > 0) {
+        foreach ($postArr as $post) {
+            $post_id = $post->ID;
+            $htmlRender = $htmlRender . '
+            <div class="post-item">
+                <a href="' . get_the_permalink($post_id) . '">
+                    <img class="item-thumbnail" src="' . wp_get_attachment_url(get_post_thumbnail_id($post_id)) . '" alt="' . get_the_title($post_id) . '" width="100%" style="height: 160px">
+                    <div class="item-title text--white body">' . get_the_title($post_id) . '</div>
+                </a>
+            </div>
+            ';
+        }
+    }
+
+    $htmlRenderEnd = ' 
         </div>
     </div>
     ';

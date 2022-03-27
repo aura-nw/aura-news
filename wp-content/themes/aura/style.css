@@ -37,7 +37,6 @@ a:hover, a:focus, button:hover, button:focus {
 }
 
 .search-container {
-    padding-top: 98px;
-    height: calc(100vh);
+    margin-top: 90px;
 }
 

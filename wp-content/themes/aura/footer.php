@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 footer__contact order-1 order-lg-2 d-flex d-lg-block">
+                <div class="col-12 col-lg-6 footer__contact order-1 order-lg-2 d-flex d-lg-block text-lg-center text-xl-start">
                     <div class="footer__logo d-lg-none flex-shrink-0 flex-grow-1 me-5">
                         <a href="/">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
@@ -30,7 +30,7 @@
                                  alt="Aura Logo">
                         </a>
                     </div>
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">Home</div>
