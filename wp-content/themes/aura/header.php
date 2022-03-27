@@ -11,7 +11,7 @@
 	<?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
-<nav class="navbar navbar-expand-lg py-4 py-lg-5">
+<nav class="navbar navbar-expand-lg py-4">
     <div class="container-fluid mx-4 mx-lg-10 px-0">
         <a class="d-lg-none" href="#">
             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
@@ -84,30 +84,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="d-flex flex-column-reverse align-items-center flex-lg-row justify-content-lg-end mt-md-0">
-                <ul class="d-flex align-items-center mt-10 mt-md-0 mb-0 pl-0">
-                    <li class="nav-item mr-half pr-6 pr-md-3 mr-lg-6">
-                        <a href="https://twitter.com/AuraNetworkHQ" target="_blank" class="nav-link icon--social p-0 d-flex">
-                            <i class="icon icon--switch-stage icon-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item pr-6 pr-md-3 mr-lg-6">
-                        <a href="https://discord.com/channels/925227249408557086/925227249408557089" target="_blank" class="nav-link icon--social p-0 d-flex">
-                            <i class="icon icon--switch-stage icon-discord"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item pr-6 pr-md-3 mr-lg-6">
-                        <a href="https://t.me/auranw" target="_blank" class="nav-link icon--social p-0 d-flex">
-                            <i class="icon icon--switch-stage icon-telegram"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item mr-md-5 mr-lg-10">
-                        <a href="https://www.facebook.com/AuraNetworkHQ/" target="_blank" class="nav-link icon--social p-0 d-flex">
-                            <i class="icon icon--switch-stage icon-fb-circle"></i>
-                        </a>
-                    </li>
-                </ul>
-                <a href="https://github.com/aura-nw/whitepaper/blob/main/release/Aura_Network___whitepaper.pdf" target="_blank" class="button button-outline button--gradient-simple button-fixed">WHITEPAPER</a>
+            <div>
+                <?php echo do_shortcode('[elementor-template id="171"]'); ?>
             </div>
         </div>
     </div>
