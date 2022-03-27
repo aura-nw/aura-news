@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 <nav class="navbar navbar-expand-lg py-4 pb-5 pb-lg-4" id="headerMenuNavbar">
     <div class="container-fluid">
-        <a class="d-lg-none" href="/">
+        <a class="d-lg-none" href="/news">
             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                  alt="Aura Logo">
@@ -26,7 +26,7 @@
             <div class="d-lg-flex justify-content-center justify-content-lg-start w-100">
                 <ul class="navbar-nav nav-menu align-items-center">
                     <li class="nav-item d-none d-lg-block">
-                        <a class="navbar-brand" href="/">
+                        <a class="navbar-brand" href="/news">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                                  alt="Aura Logo">
@@ -36,7 +36,7 @@
                         <div class="divider divider-vertical"></div>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
-                        <a class="nav-link m-auto" href="/">HOME</a>
+                        <a class="nav-link m-auto" href="/news">HOME</a>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">

@@ -9,7 +9,7 @@ while (have_posts()) :
         <div class="row">
             <div class="col-12">
                 <div class="heading sub-text text--white breadcrumb">
-                    <a href="/"> News </a>
+                    <a href="/news"> News </a>
                 </div>
                 <!-- print post title -->
                 <div class="row">
