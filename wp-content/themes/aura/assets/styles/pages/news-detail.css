@@ -64,12 +64,23 @@
     height: 480px;
     border-radius: 18px;
 }
+.breadcrumb a:hover,
 .breadcrumb a {
     color: var(--aura-white);
     text-decoration: none;
+    padding-left: 3.2rem;
 }
-.breadcrumb::before {
+
+.breadcrumb a {
+    text-decoration: none;
+    padding-left: 3.2rem;
+    position: relative;
+}
+
+.breadcrumb a::before {
+    position: absolute;
     content: "";
+    left: 0;
     height: 3.2rem;
     width: 3.2rem;
     background: url("../../images/icons/basic/arrow-left.png") center no-repeat;
