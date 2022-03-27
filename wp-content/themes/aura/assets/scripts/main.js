@@ -1,10 +1,23 @@
-// $(document).ready(function(){
-//     $('.category-list').slick({
-//         infinite: true,
-//         slidesToShow: 7,
-//         slidesToScroll: 1
-//     });
-// });
+if (window.matchMedia("(max-width: 992px)").matches) {
+    $(document).ready(function () {
+        $(".news-related-list").slick({
+            infinite: false,
+            slidesToShow: 1,
+            arrows: true,
+            mobileFirst: true,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    },
+                },
+            ],
+        });
+    });
+}
 
 $(document).ready(function(){
     hoverMenu();
