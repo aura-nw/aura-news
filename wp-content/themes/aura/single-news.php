@@ -12,7 +12,11 @@ while (have_posts()) :
                         <a href="/"> News </a>
                     </div>
                     <!-- print post title -->
-                    <div class="heading h2"><?php echo get_the_title(); ?>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="heading h2"><?php echo get_the_title(); ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="heading heading-title small-text">
                         <?php
@@ -26,7 +30,7 @@ while (have_posts()) :
                         }
                         ?>
                         <!-- P publish date -->
-                        <span><?php echo get_the_date() ?></span>
+                        <span class="text--light-gray"><?php echo get_the_date() ?></span>
                     </div>
                     <div class="heading d-flex align-items-center">
                         <!-- P author's avatar -->
@@ -37,20 +41,19 @@ while (have_posts()) :
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-8">
+                <div class="col-9">
                     <div class="featured-image">
                         <!-- Post feature image -->
                         <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="">
-
                     </div>
                     <div class="content body">
                         <!-- Post content -->
                         <?php the_content(); ?>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div><?php echo do_shortcode("[news_share id='156']") ?></div>
-                    <div><?php echo do_shortcode("[news_related id='" . get_the_ID() . "']") ?></div>
+                <div class="col-3 ps-5">
+                    <div class="mb-5"><?php echo do_shortcode("[news_share id='156']") ?></div>
+                    <div class="mt-3"><?php echo do_shortcode("[news_related id='" . get_the_ID() . "']") ?></div>
                 </div>
             </div>
             <div class="row mt-5">
