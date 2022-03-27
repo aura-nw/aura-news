@@ -46,7 +46,7 @@ section.news .banner-info .sub-title img {
 section.news .tab-content a {
     position: relative;
     margin-right: 4.8rem;
-    color: #777E90;
+    color: var( --aura-neutrals-4);
     transition: color .35s ease-in-out;
 }
 
