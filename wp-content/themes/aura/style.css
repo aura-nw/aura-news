@@ -21,3 +21,16 @@ a:hover, a:focus, button:hover, button:focus {
 }
 
 .page > h3:first-child { display: none}
+
+.divider {
+    background-color: var(--aura-neutrals-3);
+}
+.divider.divider-vertical {
+    width: 1px;
+    height: 100%;
+}
+@media (min-width: 1400px) {
+    .container-fluid {
+        max-width: 1920px;
+    }
+}

@@ -7,18 +7,19 @@
                              src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                              alt="Aura Logo">
                     </div>
-                    <div class="menu body mt-lg-11 d-flex d-lg-block">
-                        <div class="body sub-text-mob mr-4 mr-lg-0 title">Headquarter</div>
-                        <ul class="small-text">
+                    <div class="menu body mt-lg-5 d-flex d-lg-block">
+                        <div class="body sub-text-mob me-4 mr-lg-0 title">Headquarter</div>
+                        <ul class="small-text ps-0">
                             <li>Qwomar Trading Complex,</li>
                             <li>Blackburne Road,</li>
                             <li>Port Purcell, Road Town, Tortola,</li>
                             <li>British Virgin Islands VG1110.</li>
                         </ul>
+                        <div class="small-text mt-3">732-528-4945</div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-5 footer__contact order-1 order-lg-2 d-flex d-lg-block">
-                    <div class="footer__logo d-lg-none flex-shrink-0 flex-grow-1 mr-11">
+                    <div class="footer__logo d-lg-none flex-shrink-0 flex-grow-1 me-5">
                         <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                              src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                              alt="Aura Logo">
@@ -27,7 +28,7 @@
                         <div class="row">
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">Features</div>
-                                <div class="body mt-2 mt-md-10">
+                                <div class="body mt-2 mt-md-5">
                                     <div class="mb-4"><a target="_blank" href="https://safe.aura.network/welcome">Safe</a></div>
                                     <div class="mb-4"><a target="_blank" href="https://docs.aura.network/">Docs</a></div>
                                     <div class="mb-4"><a target="_blank" href="https://explorer.aura.network/">Explorer</a></div>
@@ -35,14 +36,14 @@
                             </div>
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">Partners</div>
-                                <div class="body mt-2 mt-md-10">
+                                <div class="body mt-2 mt-md-5">
                                     <div class="mb-4"><a target="_blank" href="#">Partners</a></div>
                                     <div class="mb-4"><a target="_blank" href="#">Advisors</a></div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">Resources</div>
-                                <div class="body mt-2 mt-md-10">
+                                <div class="body mt-2 mt-md-5">
                                     <div class="mb-4"><button type="button">Insights</button></div>
                                     <div class="mb-4"><a target="_blank" href="https://github.com/aura-nw/whitepaper/blob/main/release/Aura_Network___whitepaper.pdf">Whitepaper</a></div>
                                     <div class="mb-4"><a target="_blank" href="https://docs.aura.network/blog">Research</a></div>
@@ -51,7 +52,7 @@
                             </div>
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">About us</div>
-                                <div class="body mt-2 mt-md-10">
+                                <div class="body mt-2 mt-md-5">
                                     <div class="mb-4"><a target="_blank" href="#">Meet Our Team</a></div>
                                     <div class="mb-4"><a target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></div>
                                     <div class="mb-4"><a target="_blank" href="https://discord.com/login?redirect_to=%2Fchannels%2F925227249408557086%2F925227249408557089">Contact us</a></div>

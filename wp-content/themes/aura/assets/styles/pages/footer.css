@@ -6,6 +6,7 @@
 footer .footer__menu {
     color: var(--aura-white);
     padding-top: 40px;
+    padding-bottom: 40px;
     border-bottom: 1px solid var(--aura-neutrals-3);
 }
 @media (min-width: 992px) {
@@ -13,6 +14,7 @@ footer .footer__menu {
         border: none;
         margin-bottom: 100px;
         padding-right: 40px;
+        padding-bottom: 0;
     }
     footer .footer__menu .title {
         font-weight: 600;
@@ -97,7 +99,7 @@ footer button {
     text-align: left;
     outline: none;
     background: transparent;
-    padding: 0;
+    padding: 0 !important;
     color: var(--aura-light-gray);
     transition: color 0.35s ease-in-out;
 }

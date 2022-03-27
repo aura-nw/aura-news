@@ -1,9 +1,9 @@
 <?php
 function myscripts() {
     // lib css
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array());
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/styles/bootstrap.min.css', array());
     wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/styles/slick.css', array());
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array());
     // lib js
     // remove wp jquery
     wp_deregister_script('jquery');

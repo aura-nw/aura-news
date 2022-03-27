@@ -11,16 +11,16 @@
 	<?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
-<nav class="navbar navbar-expand-lg py-4">
-    <div class="container-fluid mx-3 mx-lg-5">
+<nav class="navbar navbar-expand-lg py-4" id="headerMenuNavbar">
+    <div class="container-fluid">
         <a class="d-lg-none" href="#">
             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                  alt="Aura Logo">
         </a>
         <button class="navbar-toggler ml-auto d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#headerMenu"
-                aria-controls="headerMenu" aria-expanded="false">
-            <i class="icon icon-close">X</i>
+                aria-controls="headerMenu" aria-expanded="false" id="headerMenuToggler">
+            <i class="icon"></i>
         </button>
         <div class="collapse navbar-collapse" id="headerMenu">
             <div class="d-lg-flex justify-content-center justify-content-lg-start w-100">
@@ -35,13 +35,13 @@
                     <li class="nav-item mx-4 mx-lg-12 d-none d-lg-block">
                         <div class="divider divider-vertical"></div>
                     </li>
-                    <li class="nav-item mx-lg-4 h4 h3-mob mb-12 mb-md-0 mr-md-8 dropdown">
+                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
                         <a class="nav-link m-auto" href="/">HOME</a>
                     </li>
-                    <li class="nav-item mx-lg-4 h4 h3-mob mb-12 my-md-0 mr-md-8">
+                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
                             <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuPartners" data-bs-toggle="dropdown">
-                                PARTNERS
+                                LABS
                             </button>
                             <ul class="dropdown-menu body sub-text-mob"  aria-labelledby="dropdownMenuPartners">
                                 <li><button class="dropdown-item">Partners</button></li>
@@ -49,10 +49,10 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mx-lg-4 h4 h3-mob mb-12 my-md-0 mr-md-8">
+                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
                             <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
-                                RESOURCES
+                                ANNOUNCEMENT
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
                                 <li><button type="button" class="dropdown-item">Insights</button></li>
@@ -63,10 +63,10 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mx-lg-4 h4 h3-mob mb-12 my-md-0">
+                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0">
                         <div class="dropdown">
                             <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuAbout" data-bs-toggle="dropdown">
-                                ABOUT US
+                                GUIDE
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuAbout">
                                 <li><button class="dropdown-item">Meet Our Team</button></li>
@@ -77,9 +77,20 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="flex-shrink-0 mt-5 mt-lg-0">
                 <?php echo do_shortcode('[elementor-template id="171"]'); ?>
             </div>
         </div>
     </div>
 </nav>
+<script type="application/javascript">
+    $(document).ready(function(){
+        $('#headerMenuToggler').click(function () {
+            if($('#headerMenuToggler').attr('aria-expanded') == 'true') {
+                $('#headerMenuNavbar').addClass('expanded');
+            } else {
+                $('#headerMenuNavbar').removeClass('expanded');
+            }
+        })
+    });
+</script>
