@@ -34,3 +34,9 @@ a:hover, a:focus, button:hover, button:focus {
         max-width: 1920px;
     }
 }
+
+.search-container {
+    padding-top: 98px;
+    height: calc(100vh);
+}
+
