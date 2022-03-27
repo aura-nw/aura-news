@@ -76,7 +76,7 @@ $thePostArr = query_posts($args);
                     foreach ($categoryArr as $key=>$cat   ) {
                         ?>
                         <div class="tab-content">
-                            <a href="/?category=<?php echo $cat->slug ?>"
+                            <a href="/news/?category=<?php echo $cat->slug ?>"
                                class="h4 text-decoration-none
                                <?php
                                if(!isset($_GET['category']) && $key == 0) {

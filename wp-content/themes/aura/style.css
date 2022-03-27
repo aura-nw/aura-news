@@ -40,3 +40,4 @@ a:hover, a:focus, button:hover, button:focus {
     margin-top: 90px;
 }
 
+.elementor-editor-active .navbar {display: none;}
