@@ -1,4 +1,4 @@
-if (window.matchMedia("(max-width: 992)").matches) {
+if (window.matchMedia("(max-width: 992px)").matches) {
   $(document).ready(function () {
     $(".news-related-list").slick({
       infinite: false,
