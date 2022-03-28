@@ -141,7 +141,14 @@ section.news .post-content .post-img-contain {
     overflow: hidden;
     border-radius: 19px;
     width: 100%;
+    border: 2px solid #212121;
 }
+
+section.news .post-content:hover .post-img-contain {
+    border-color: #353945;
+    box-shadow: 0px 2px 36px 12px #31313140;
+}
+
 section.news .post-content .post-img-contain:before {
     content: "";
     display: block;
