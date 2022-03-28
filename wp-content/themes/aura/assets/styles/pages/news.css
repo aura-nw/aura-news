@@ -126,17 +126,14 @@ section.news .post-content {
     transition: all .35s ease-in-out;
 }
 
-section.news .post-content:hover {
-    transform: translate3D(3px, -3px, 0);
-}
-
 section.news .post-content .post-item {
     border-radius: 19px;
-    transition: box-shadow .35s ease-in-out;
 }
-section.news .post-content:hover .post-item {
-    box-shadow: 25px 13px 20px -12px rgb(108 97 97 / 40%);
 
+section.news .post-content:hover .post-item .post-title {
+    background: var(--aura-gradient-simple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 section.news .post-content .post-img-contain {

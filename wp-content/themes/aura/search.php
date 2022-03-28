@@ -19,10 +19,12 @@
                 $post_title = get_the_title();
                 $post_link = get_the_permalink();
                 ?>
-                <div class="col-lg-4 col-12">
+                <div class="col-12 col-md-6 col-lg-4">
                     <a href="<?php echo $post_link ?>" class="post-content">
                         <div class="post-item mb-5 pb-4">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
+                            <div class="post-img-contain">
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
+                            </div>
                             <div class="heading d-flex align-items-center mt-4">
                                 <div class="author-avatar ms-0">
                                     <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
