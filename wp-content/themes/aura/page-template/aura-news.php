@@ -61,7 +61,7 @@ $thePostArr = query_posts($args);
                         <img src="<?php echo IMAGE_URL.'/icons/color/check-decagram.png' ?>" alt="" class="ms-3">
                     </div>
                     <h2 class=""><?php echo $title ?></h2>
-                    <div class="body text--light-gray mt-4 fw-bold"><?php echo $desc ?></div>
+                    <div class="body text--light-gray fw-bold"><?php echo $desc ?></div>
                 </div>
             </div>
         </div>

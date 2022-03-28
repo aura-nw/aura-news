@@ -26,13 +26,13 @@ while (have_posts()) :
                         foreach ($cats as $cat) {
                         ?>
                             <!-- Print category -->
-                            <span class="category"><?php echo $cat->name; ?></span>
+                            <span class="category mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
                         <?php
                         }
                         ?>
                     </div>
                     <!-- P publish date -->
-                    <span class="text--light-gray"><?php echo get_the_date() ?></span>
+                    <span class="text--light-gray mt-3 mt-sm-0"><?php echo get_the_date() ?></span>
                 </div>
                 <div class="heading d-flex align-items-center">
                     <!-- P author's avatar -->

@@ -9,8 +9,13 @@ section.news .banner-hero {
 
 section.news .banner-hero img {
     width: 100%;
-    height: 300px;
+    height: 200px;
     object-fit: contain;
+}
+@media (min-width: 576px) {
+    section.news .banner-hero img {
+        height: 350px;
+    }
 }
 @media (min-width: 768px) {
     section.news .banner-hero img {
@@ -19,7 +24,29 @@ section.news .banner-hero img {
 }
 @media (min-width: 992px) {
     section.news .banner-hero img {
-        height: 775px;
+        height: 600px;
+        object-fit: contain;
+    }
+}
+@media (min-width: 1024px) {
+    section.news .banner-hero img {
+        height: 500px;
+        object-fit: cover;
+    }
+}
+@media (min-width: 1200px) {
+    section.news .banner-hero img {
+        height: 500px;
+    }
+}
+@media (min-width: 1440px) {
+    section.news .banner-hero img {
+        height: 600px;
+    }
+}
+@media (min-width: 1600px) {
+    section.news .banner-hero img {
+        height: 800px;
     }
 }
 section.news .banner-info {
@@ -101,11 +128,20 @@ section.news .post-content:hover .post-item {
 section.news .post-content .post-img {
     width: 100%;
     height: 210px;
-    object-fit: cover;
+    /*object-fit: contain;*/
     border-radius: 19px;
     background-color: var(--aura-black);
 }
-
+@media (max-width: 375px) {
+    section.news .post-content .post-img {
+        height: 170px;
+    }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+    section.news .post-content .post-img {
+        width: auto;
+    }
+}
 section.news .post-content .item-post-time {
     font-size: 1.4rem;
     line-height: 2.4rem;

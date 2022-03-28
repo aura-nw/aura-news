@@ -30,11 +30,6 @@ a:hover, a:focus, button:hover, button:focus {
     width: 1px;
     height: 100%;
 }
-@media (min-width: 1400px) {
-    .container-fluid {
-        max-width: 1920px;
-    }
-}
 
 .search-container {
     margin-top: 90px;

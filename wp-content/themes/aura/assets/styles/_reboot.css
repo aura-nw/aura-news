@@ -40,11 +40,6 @@ a {
 a:hover {
     color: var(--aura-white);
 }
-@media (min-width: 1921px) {
-    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1920px;
-    }
-}
 body.page-template {
     padding-top: 60px;
 }

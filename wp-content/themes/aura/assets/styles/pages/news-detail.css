@@ -12,6 +12,7 @@ section.news-details .heading-title {
 
 section.news-details .heading-title .categories {
     display: flex;
+    flex-wrap: wrap;
 }
 
 section.news-details .categories .category {
