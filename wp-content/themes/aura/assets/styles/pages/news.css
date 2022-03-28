@@ -41,12 +41,18 @@ section.news .banner-hero img {
 }
 @media (min-width: 1440px) {
     section.news .banner-hero img {
-        height: 600px;
+        height: 664px;
     }
 }
 @media (min-width: 1600px) {
     section.news .banner-hero img {
         height: 800px;
+    }
+}
+@media (min-width: 1920px) {
+    section.news .banner-hero img {
+        height: 800px;
+        object-fit: contain;
     }
 }
 section.news .banner-info {
