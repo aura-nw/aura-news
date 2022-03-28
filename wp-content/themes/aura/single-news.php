@@ -14,8 +14,8 @@ while (have_posts()) :
                 <!-- print post title -->
                 <div class="row">
                     <div class="col-12 col-lg-9">
-                        <div class="heading h2 h2-mob"><?php echo get_the_title(); ?>
-                        </div>
+                        <h1 class="heading h2 h2-mob"><?php echo get_the_title(); ?>
+                        </h1>
                     </div>
                 </div>
                 <div class="heading heading-title small-text">
