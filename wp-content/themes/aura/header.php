@@ -38,7 +38,7 @@
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
                         <a class="nav-link m-auto" href="/news">HOME</a>
                     </li>
-                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
+                    <!-- <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
                             <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuPartners" data-bs-toggle="dropdown">
                                 LABS
@@ -48,7 +48,7 @@
                                 <li><a class="dropdown-item" target="_blank" href="https://explorer.aura.network/">Explorer</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
                             <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
@@ -61,7 +61,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0">
+                    <!-- <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0">
                         <div class="dropdown">
                             <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuAbout" data-bs-toggle="dropdown">
                                 GUIDE
@@ -71,7 +71,7 @@
                                 <li><a class="dropdown-item" target="_blank" href="https://aura.network#faqs">FAQs</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="flex-shrink-0 mt-5 mt-lg-0 social-group">
