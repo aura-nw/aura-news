@@ -60,7 +60,7 @@ $thePostArr = query_posts($args);
                         <span><?php echo $subTitle ?></span>
                         <img src="<?php echo IMAGE_URL.'/icons/color/check-decagram.png' ?>" alt="" class="ms-3">
                     </div>
-                    <h2 class=""><?php echo $title ?></h2>
+                    <h1 class="h2"><?php echo $title ?></h1>
                     <div class="body text--light-gray fw-bold"><?php echo $desc ?></div>
                 </div>
             </div>
