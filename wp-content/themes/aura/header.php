@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title><?php wp_title('');?></title>
     <!-- meta name allow design css when screen change -->
      <meta name="viewport" content="width=device-width,initial-scale=1">
 	<link type="image/x-icon" rel="shortcut icon" href="<?php echo IMAGE_URL; ?>/favicon.png">
