@@ -47,7 +47,7 @@ $thePostArr = query_posts($args);
 ?>
 <section class="news">
     <div class="banner-hero">
-        <div class="container banner-info d-none d-lg-block">
+        <div class="container banner-info">
             <div class="row">
                 <div class="col-12">
                     <?php
@@ -65,7 +65,7 @@ $thePostArr = query_posts($args);
                 </div>
             </div>
         </div>
-        <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>">
+        <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" class="d-none d-lg-block">
     </div>
     <div class="container">
         <div class="row">
@@ -109,7 +109,7 @@ $thePostArr = query_posts($args);
                     $post_title = get_the_title();
                     $post_link = get_the_permalink();
                     ?>
-                    <div class="col-lg-4 col-12">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <a href="<?php echo $post_link ?>" class="post-content">
                             <div class="post-item mb-5 pb-4">
                                 <div class="post-img-contain">

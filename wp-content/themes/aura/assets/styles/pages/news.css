@@ -1,7 +1,13 @@
 section.news {
     margin-bottom: 100px;
+    margin-top: 60px;
 }
 
+@media (min-width: 992px) {
+    section.news {
+        margin-top: 0;
+    }
+}
 section.news .banner-hero {
     margin-bottom: 5.4rem;
     position: relative;
@@ -55,11 +61,13 @@ section.news .banner-hero img {
         object-fit: contain;
     }
 }
-section.news .banner-info {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 56px;
+@media (min-width: 992px) {
+    section.news .banner-info {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 56px;
+    }
 }
 
 section.news .banner-info .sub-title span {
