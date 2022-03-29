@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 footer__menu pb-10 order-2 order-lg-1">
                     <div class="footer__logo d-none d-lg-block">
-                        <a href="/news">
+                        <a href="/">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                                  alt="Aura Logo">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-12 col-lg-6 footer__contact order-1 order-lg-2 d-flex d-lg-block text-lg-center text-xl-start">
                     <div class="footer__logo d-lg-none flex-shrink-0 flex-grow-1 me-5">
-                        <a href="/news">
+                        <a href="/">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
                                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                                  alt="Aura Logo">

@@ -18,7 +18,7 @@ function createShareNews($attr)
 
     $htmlRender = '
     <div class="news-shared">
-        <div class="sub-text">Share Post</div>
+        <div class="sub-text-redig">Share Post</div>
         <div class="social-btn-group">
             <a href="' . $telegramLink . '">
                 <img src="' . $telegramIcon . '" alt="" width="18" height="18">
