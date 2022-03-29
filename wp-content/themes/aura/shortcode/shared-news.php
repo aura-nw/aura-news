@@ -7,7 +7,7 @@ function createShareNews($attr)
     $telegramLink = 'https://t.me/share/url?url=' . $postLink;
     $twitterLink = 'https://twitter.com/intent/tweet?text=' . $postLink;
     $discordLink = 'https://twitter.com/intent/tweet?text=' . $postLink;
-    $facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=xerosanyam.github.io' . $postLink;
+    $facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=' . $postLink;
 
     $facebookIcon = IMAGE_URL . '/icons/basic/facebook.png';
     $telegramIcon = IMAGE_URL . '/icons/basic/telegram.png';
