@@ -8,6 +8,9 @@ function createShareNews($attr)
     $twitterLink = 'https://twitter.com/intent/tweet?text=' . $postLink;
     $discordLink = 'https://twitter.com/intent/tweet?text=' . $postLink;
     $facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=' . $postLink;
+    $pinterest = 'https://pinterest.com/pin/create/button/?url='.$postLink;
+    $linkedin = 'https://www.linkedin.com/sharing/share-offsite/?url='.$postLink;
+    $tumblr = 'https://www.tumblr.com/widgets/share/tool?posttype=link&caption='.$postLink.'&shareSource=tumblr_share_button';
 
     $facebookIcon = IMAGE_URL . '/icons/basic/facebook.png';
     $telegramIcon = IMAGE_URL . '/icons/basic/telegram.png';

@@ -33,6 +33,11 @@ h4, .h4 {
     line-height: 3.2rem !important;
     font-family: 'system-ui' !important;
 }
+.sub-text-redig {
+    font-size: 2.4rem !important;
+    line-height: 3.2rem !important;
+    font-family: 'Redig' !important;
+}
 .body {
     font-size: 1.6rem !important;
     line-height: 2.4rem !important;

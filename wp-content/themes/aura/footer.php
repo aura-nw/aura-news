@@ -35,13 +35,13 @@
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">Home</div>
                             </div>
-                            <div class="col-6 col-md-3">
+                            <!-- <div class="col-6 col-md-3">
                                 <div class="body contact__title">Labs</div>
                                 <div class="body mt-2 mt-md-5">
                                     <div class="mb-4"><a target="_blank" href="https://safe.aura.network/welcome">Safe</a></div>
                                     <div class="mb-4"><a target="_blank" href="https://explorer.aura.network/">Explorer</a></div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-6 col-md-3">
                                 <div class="body contact__title">Annoucement</div>
                                 <div class="body mt-2 mt-md-5">
@@ -50,13 +50,13 @@
                                     <div class="mb-4"><a target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3">
+                            <!-- <div class="col-6 col-md-3">
                                 <div class="body contact__title">Guide</div>
                                 <div class="body mt-2 mt-md-5">
                                     <div class="mb-4"><button type="button">NFT 101</button></div>
                                     <div class="mb-4"><a target="_blank" href="https://aura.network#faqs">FAQs</a></div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                     <div class="footer__cta-contain">
                         <div class="body text-gradient">Never miss an opportunity!</div>
                         <div class="small-text mt-2 mt-md-5 -max-width-256">
-                            Sign up now for exclusive events, feature release, announcement, plus few surprises!
+                            Sign up now for exclusive events, feature releases, announcements, plus few surprises!
                         </div>
                         <div class="mt-5 -max-width-256">
 <!--                            <form  class="aura-form single-input-field">-->
