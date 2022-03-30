@@ -59,7 +59,11 @@ section.news-details .featured-image img {
     height: auto;
     border-radius: 18px;
 }
-section.news-details .social-group {
+section.news-details .social-group .elementor-container.elementor-column-gap-default {
+    margin: 0;
+}
+section.news-details .social-group .elementor-row {
+    justify-content: start;
     margin: 0 -16px;
 }
 .breadcrumb a:hover,
