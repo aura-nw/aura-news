@@ -123,7 +123,18 @@ $thePostArr = query_posts($args);
                                 </div>
                                 <div class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></div>
                                 <div class="item-post-time my-4">
-									<span class="item-category">Safe</span>
+                                    <div class="categories">
+                                        <?php
+                                        // Get all category that post belong to that
+                                        $cats =  get_the_terms(get_the_ID(), 'category');
+                                        foreach ($cats as $cat) {
+                                        ?>
+                                            <!-- Print category -->
+                                            <span class="category mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
 									<?php echo get_the_date() ?>
 								</div>
                                 <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>

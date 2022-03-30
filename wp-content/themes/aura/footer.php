@@ -89,7 +89,7 @@
         <div class="container">
             <div class="d-lg-flex justify-content-between align-items-center flex-lg-row-reverse">
                 <div class="my-2 my-lg-0">
-                    <?php echo do_shortcode('[elementor-template id="171"]'); ?>
+                    <?php echo do_shortcode('[elementor-template id="905"]'); ?>
                 </div>
                 <div class="caption-2 text-center text-lg-left my-2 my-lg-0">Copyright © 2022 Aura Network. All rights reserved</div>
             </div>
