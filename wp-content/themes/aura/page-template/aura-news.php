@@ -122,7 +122,10 @@ $thePostArr = query_posts($args);
                                     <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
                                 </div>
                                 <div class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></div>
-                                <div class="item-post-time my-sm-2"><?php echo get_the_date() ?></div>
+                                <div class="item-post-time my-4">
+									<span class="item-category">Safe</span>
+									<?php echo get_the_date() ?>
+								</div>
                                 <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
                             </div>
                         </a>

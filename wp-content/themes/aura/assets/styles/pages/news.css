@@ -223,6 +223,18 @@ section.news #search-bar::placeholder {
     color: var(--aura-white);
 }
 
+section.news .post-item .item-category {
+    padding: 4px 16px;
+    position: static;
+    width: 56px;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+    background: #38383D;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+
 @media (max-width: 992.99px) {
     section.news .post-content {
         padding: 0;
@@ -231,7 +243,7 @@ section.news #search-bar::placeholder {
     section.news .tab-content{
         text-align: center;
         margin-bottom: 3rem;
-        width: 100%;
+        /* width: 100%; */
     }
     section.news .tab-content a {
         margin-right: 1rem;

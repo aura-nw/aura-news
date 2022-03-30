@@ -14,8 +14,8 @@
 <nav class="navbar navbar-expand-lg py-4 pb-5 pb-lg-4" id="headerMenuNavbar">
     <div class="container-fluid">
         <a class="d-lg-none" href="/">
-            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
-                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
+            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
+                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
                  alt="Aura Logo">
         </a>
         <button class="navbar-toggler ml-auto d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#headerMenu"
@@ -27,8 +27,8 @@
                 <ul class="navbar-nav nav-menu align-items-center">
                     <li class="nav-item d-none d-lg-block">
                         <a class="navbar-brand" href="/">
-                            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
-                                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
+                            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
+                                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
                                  alt="Aura Logo">
                         </a>
                     </li>
