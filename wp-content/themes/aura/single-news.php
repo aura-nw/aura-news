@@ -58,12 +58,10 @@ while (have_posts()) :
                 <div class="mt-3"><?php echo do_shortcode("[news_related id='" . get_the_ID() . "']") ?></div>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-5 col-md-3 col-xl-2">
-                <div class="body bold">Follow us on:</div>
-                <div class="social-group">
-                    <?php echo do_shortcode('[elementor-template id="905"]'); ?>
-                </div>
+        <div class="mt-5">
+            <div class="body bold">Follow us on:</div>
+            <div class="social-group">
+                <?php echo do_shortcode('[elementor-template id="171"]'); ?>
             </div>
         </div>
     </div>

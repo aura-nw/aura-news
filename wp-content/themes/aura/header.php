@@ -24,7 +24,7 @@
         </button>
         <div class="collapse navbar-collapse" id="headerMenu">
             <div class="d-lg-flex justify-content-center justify-content-lg-start w-100">
-                <ul class="navbar-nav nav-menu align-items-center">
+                <ul class="navbar-nav nav-menu align-items-lg-center">
                     <li class="nav-item d-none d-lg-block">
                         <a class="navbar-brand" href="/">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
@@ -36,46 +36,25 @@
                         <div class="divider divider-vertical"></div>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
-                        <a class="nav-link m-auto" href="/">HOME</a>
+                        <a class="nav-link" href="/">HOME</a>
                     </li>
-                    <!-- <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
-                        <div class="dropdown">
-                            <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuPartners" data-bs-toggle="dropdown">
-                                LABS
-                            </button>
-                            <ul class="dropdown-menu body sub-text-mob"  aria-labelledby="dropdownMenuPartners">
-                                <li><a class="dropdown-item" target="_blank" href="https://safe.aura.network/welcome">Safe</a></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://explorer.aura.network/">Explorer</a></li>
-                            </ul>
-                        </div>
-                    </li> -->
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
-                            <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
+                            <button class="nav-link dropdown-toggle" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
                                 ANNOUNCEMENT
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
-                                <li><button class="dropdown-item">Partnership</button></li>
-                                <li><button class="dropdown-item">News</button></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></li>
+                                <li><button class="dropdown-item sub-text-redig">PARTNERSHIP</button></li>
+                                <li><button class="dropdown-item sub-text-redig">NEWS</button></li>
+                                <li><a class="dropdown-item sub-text-redig" target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">CAREERS</a></li>
                             </ul>
                         </div>
                     </li>
-                    <!-- <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0">
-                        <div class="dropdown">
-                            <button class="nav-link dropdown-toggle m-auto" type="button" id="dropdownMenuAbout" data-bs-toggle="dropdown">
-                                GUIDE
-                            </button>
-                            <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuAbout">
-                                <li><button class="dropdown-item">NFT 101</button></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://aura.network#faqs">FAQs</a></li>
-                            </ul>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
             <div class="flex-shrink-0 mt-5 mt-lg-0 social-group">
-                <?php echo do_shortcode('[elementor-template id="905"]'); ?>
+                <!-- 171 -->
+                <?php echo do_shortcode('[elementor-template id="171"]'); ?>
             </div>
         </div>
     </div>

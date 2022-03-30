@@ -20,7 +20,7 @@ function createRelatedNews($attr)
     $postArr = get_posts($args);
     $htmlRender = '
     <div class="news-related">
-        <div class="sub-text-redig mb-3 mb-lg-4">Related Posts</div>
+        <div class="sub-text mb-3 mb-lg-4">Related Posts</div>
         <div id="news-related-list" class="news-related-list mb-2 d-lg-none">
     ';
     if ($postArr > 0) {
