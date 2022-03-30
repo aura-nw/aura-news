@@ -186,3 +186,15 @@ section.news-details .social-group {
         transform: rotate(180deg);
     }
 }
+.news-details .content.body  * {
+    font-family: SFProDisplay !important;
+}
+
+.news-details .content.body p {
+    color: var(--aura-light-gray);
+    margin-bottom: 16px;
+}
+
+.news-details .content.body a {
+    color: var(--aura-green);
+}
