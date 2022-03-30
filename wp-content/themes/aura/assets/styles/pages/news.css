@@ -223,6 +223,10 @@ section.news #search-bar::placeholder {
     color: var(--aura-white);
 }
 
+section.news .categories {
+	display: inline-block;
+}
+
 section.news .categories .category {
     display: flex;
     flex-direction: row;
