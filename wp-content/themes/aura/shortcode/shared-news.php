@@ -21,23 +21,23 @@ function createShareNews($attr)
 
     $htmlRender = '
     <div class="news-shared">
-        <div class="sub-text-redig">Share Post</div>
-        <div class="social-btn-group d-flex justify-content-start justify-content-lg-between">
-            <a class="me-3 me-lg-0" href="' . $telegramLink . '">
+        <div class="sub-text">Share Post</div>
+        <div class="social-btn-group d-flex">
+            <a class="me-3" href="' . $telegramLink . '">
                 <img src="' . $telegramIcon . '" alt="" width="18" height="18">
             </a>
-            <a class="me-3 me-lg-0" href="' . $twitterLink . '">
+            <a class="me-3" href="' . $twitterLink . '">
                 <img src="' . $twitterIcon . '" alt="" width="18" height="18">
-            <a class="me-3 me-lg-0" href="' . $facebookLink . '">
+            <a class="me-3" href="' . $facebookLink . '">
                 <img src="' . $facebookIcon . '" alt="" width="18" height="18">
             </a>
-            <a class="me-3 me-lg-0" href="' . $pinterestLink . '">
+            <a class="me-3" href="' . $pinterestLink . '">
                 <img src="' . $pinterestIcon . '" alt="" width="18" height="18">
             </a>
-            <a class="me-3 me-lg-0" href="' . $linkedinLink . '">
+            <a class="me-3" href="' . $linkedinLink . '">
                 <img src="' . $linkedinIcon . '" alt="" width="18" height="18">
             </a>
-            <a class="me-3 me-lg-0" href="' . $tumblrLink . '">
+            <a class="me-3" href="' . $tumblrLink . '">
                 <img src="' . $tumblrIcon . '" alt="" width="18" height="18">
             </a>
         </div>
