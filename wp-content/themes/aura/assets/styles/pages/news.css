@@ -223,16 +223,17 @@ section.news #search-bar::placeholder {
     color: var(--aura-white);
 }
 
-section.news .post-item .item-category {
-    padding: 4px 16px;
-    position: static;
-    width: 56px;
+section.news .categories .category {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
     height: 24px;
-    left: 0px;
-    top: 0px;
-    background: #38383D;
-    margin-right: 8px;
     border-radius: 6px;
+    background: var(--aura-dark-gray);
+    padding: 0.4rem 1.6rem;
+    margin-right: 1rem;
 }
 
 @media (max-width: 992.99px) {
