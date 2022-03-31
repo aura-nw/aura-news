@@ -223,7 +223,8 @@ section.news #search-bar::placeholder {
 }
 
 section.news .categories {
-	display: inline-block;
+	display: flex;
+    flex-wrap: wrap;
 }
 
 section.news .categories .category {
@@ -236,7 +237,8 @@ section.news .categories .category {
     border-radius: 6px;
     background: var(--aura-dark-gray);
     padding: 0.4rem 1.6rem;
-    margin-right: 1rem;
+    margin-right: 12px;
+    margin-bottom: 8px;
 }
 
 @media (max-width: 992.99px) {

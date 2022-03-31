@@ -10,6 +10,11 @@ $args = null;
 $categoryArr = get_categories('taxonomy=category&type=news');
 // get first category -> default category in the first time
 $firstCategory = get_categories('taxonomy=category&type=news')[0];
+for($i=0; $i<=count($categoryArr); $i++) {
+    if($categoryArr->category_count > 0) {
+        $firstCategory = $categoryArr[$i];
+    }
+}
 // if have category in URL -> get all news belong to that category
 if (isset($_GET['category'])) {
     $args = array(
@@ -134,8 +139,8 @@ $thePostArr = query_posts($args);
                                         <?php
                                         }
                                         ?>
+                                        <div><?php echo get_the_date() ?></div>
                                     </div>
-									<?php echo get_the_date() ?>
 								</div>
                                 <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
                             </div>

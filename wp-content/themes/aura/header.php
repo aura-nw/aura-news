@@ -36,11 +36,11 @@
                         <div class="divider divider-vertical"></div>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
-                        <a class="nav-link" href="/">HOME</a>
+                        <a class="nav-link ps-0" href="/">HOME</a>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
-                            <button class="nav-link dropdown-toggle" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
+                            <button class="nav-link dropdown-toggle ps-0" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
                                 ANNOUNCEMENT
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
