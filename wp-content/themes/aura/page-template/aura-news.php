@@ -7,14 +7,15 @@ get_header();
 global $wp;
 $args = null;
 // get all news category
-$categoryArr = get_categories('taxonomy=category&type=news');
+$argsCats = array(
+    'hide_empty' => 0,
+    'pad_counts' => true,
+    'taxonomy'=> 'category',
+    'type' => 'news'
+);
+$categoryArr = get_categories($argsCats);
 // get first category -> default category in the first time
 $firstCategory = get_categories('taxonomy=category&type=news')[0];
-for($i=0; $i<=count($categoryArr); $i++) {
-    if($categoryArr->category_count > 0) {
-        $firstCategory = $categoryArr[$i];
-    }
-}
 // if have category in URL -> get all news belong to that category
 if (isset($_GET['category'])) {
     $args = array(

@@ -1,6 +1,7 @@
 <?php
 get_header();
 // check if post exist
+$showBanner = get_field('show_feature_image_as_banner');
 while (have_posts()) :
     the_post();
 ?>
@@ -44,10 +45,16 @@ while (have_posts()) :
         </div>
         <div class="row mt-5">
             <div class="col-12 col-lg-9">
-                <div class="featured-image">
-                    <!-- Post feature image -->
-                    <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="">
-                </div>
+                <?php
+                    if($showBanner):
+                ?>
+                    <div class="featured-image">
+                        <!-- Post feature image -->
+                        <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="">
+                    </div>
+                <?php
+                    endif;
+                ?>
                 <div class="content body">
                     <!-- Post content -->
                     <?php the_content(); ?>
