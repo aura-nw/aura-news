@@ -53,25 +53,8 @@ $thePostArr = query_posts($args);
 ?>
 <section class="news">
     <div class="banner-hero">
-        <div class="container banner-info">
-            <div class="row">
-                <div class="col-12">
-                    <?php
-                    // get custom field in Page News (belong to banner)
-                    $subTitle = get_field( "sub_title" );
-                    $title = get_field( "title" );
-                    $desc = get_field( "description" );
-                    ?>
-                    <div class="sub-title d-flex align-items-center">
-                        <span><?php echo $subTitle ?></span>
-                        <img src="<?php echo IMAGE_URL.'/icons/color/check-decagram.png' ?>" alt="" class="ms-3">
-                    </div>
-                    <h1 class="h2"><?php echo $title ?></h1>
-                    <div class="body text--light-gray fw-bold"><?php echo $desc ?></div>
-                </div>
-            </div>
-        </div>
-        <img src="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" alt="<?php echo $thumbnail = get_the_post_thumbnail_url(); ?>" class="d-none d-lg-block">
+        <img src="<?php echo get_field('desktop_image'); ?>" alt="Banner desktop" class="d-none d-lg-block">
+        <img src="<?php echo get_field('mobile_image'); ?>" alt="Banner Mobile" class="d-lg-none">
     </div>
     <div class="container">
         <div class="row">

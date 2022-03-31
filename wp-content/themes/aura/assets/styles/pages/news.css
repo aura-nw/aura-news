@@ -1,12 +1,5 @@
 section.news {
     margin-bottom: 100px;
-    margin-top: 60px;
-}
-
-@media (min-width: 992px) {
-    section.news {
-        margin-top: 0;
-    }
 }
 section.news .banner-hero {
     margin-bottom: 5.4rem;
@@ -15,13 +8,6 @@ section.news .banner-hero {
 
 section.news .banner-hero img {
     width: 100%;
-    height: 200px;
-    object-fit: contain;
-}
-@media (min-width: 576px) {
-    section.news .banner-hero img {
-        height: 350px;
-    }
 }
 @media (min-width: 768px) {
     section.news .banner-hero img {
@@ -60,16 +46,7 @@ section.news .banner-hero img {
         height: auto;
         object-fit: unset;
         width: 100%;
-        max-width: 1920px;
         margin: auto;
-    }
-}
-@media (min-width: 992px) {
-    section.news .banner-info {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 56px;
     }
 }
 
