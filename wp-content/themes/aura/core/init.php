@@ -88,7 +88,10 @@ function remove_unit_tag($url){
  * Add theme setting
  */
 //add new menu for theme-options page with page callback theme-options-page.
-add_theme_page("Theme Option", "Theme Option", "manage_options", "theme-options", "theme_option_page", null, 99);
+function add_custom_theme_page() {
+    add_theme_page( 'Theme Title Settings', 'Theme Menu Settings', 'edit_theme_options', 'test-theme-options', 'theme_option_page' );
+}
+add_action( 'admin_menu', 'add_custom_theme_page' );
 function theme_option_page() {
     ?>
     <div class="wrap">
