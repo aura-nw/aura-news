@@ -1,0 +1,88 @@
+i.aura-icon {
+ font-size: 20px;
+ position: relative;
+ width: 1em;
+ height: 1em;
+ display: inline-block;
+}
+i.aura-icon::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+}
+/* Declare icon name */
+/* FB */
+.aura-icon-fb::before {
+ background: url("../images/icons/basic/facebook.png") no-repeat center;
+ background-size: contain;
+}
+.icon--switch-stage.aura-icon-fb::before {
+ transition: background .35s ease-in-out;
+}
+.icon--switch-stage.aura-icon-fb:hover::before {
+ background: url("../images/icons/color/facebook.png") no-repeat center;
+ background-size: contain;
+}
+/* telegram */
+.aura-icon-telegram::before {
+ background: url("../images/icons/basic/telegram.png") no-repeat center;
+ background-size: contain;
+}
+.icon--switch-stage.aura-icon-telegram::before {
+ transition: background .35s ease-in-out;
+}
+.icon--switch-stage.aura-icon-telegram:hover::before {
+ background: url("../images/icons/color/telegram.png") no-repeat center;
+ background-size: contain;
+}
+/* twitter */
+.aura-icon-twitter::before {
+ background: url("../images/icons/basic/twitter.png") no-repeat center;
+ background-size: contain;
+}
+.icon--switch-stage.aura-icon-twitter::before {
+ transition: background .35s ease-in-out;
+}
+.icon--switch-stage.aura-icon-twitter:hover::before {
+ background: url("../images/icons/color/twitter.png") no-repeat center;
+ background-size: contain;
+}
+/* linkedin */
+.aura-icon-linkedin::before {
+ background: url("../images/icons/basic/linkedin.png") no-repeat center;
+ background-size: contain;
+}
+.icon--switch-stage.aura-icon-linkedin::before {
+ transition: background .35s ease-in-out;
+}
+.icon--switch-stage.aura-icon-linkedin:hover::before {
+ background: url("../images/icons/color/linkedin.png") no-repeat center;
+ background-size: contain;
+}
+/* tumblr */
+.aura-icon-tumblr::before {
+ background: url("../images/icons/basic/tumblr.png") no-repeat center;
+ background-size: contain;
+}
+.icon--switch-stage.aura-icon-tumblr::before {
+ transition: background .35s ease-in-out;
+}
+.icon--switch-stage.aura-icon-tumblr:hover::before {
+ background: url("../images/icons/color/tumblr.png") no-repeat center;
+ background-size: contain;
+}
+/* pinterest */
+.aura-icon-pinterest::before {
+ background: url("../images/icons/basic/pinterest.png") no-repeat center;
+ background-size: contain;
+}
+.icon--switch-stage.aura-icon-pinterest::before {
+ transition: background .35s ease-in-out;
+}
+.icon--switch-stage.aura-icon-pinterest:hover::before {
+ background: url("../images/icons/color/pinterest.png") no-repeat center;
+ background-size: contain;
+}

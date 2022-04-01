@@ -11,9 +11,17 @@ define('CORE', THEME_URL . '/core');
 add_action('wp_enqueue_scripts', 'myscripts');
 
 require_once(get_template_directory() . '/core/init.php');
-// Include post-type
+/*
+ * Include post-type
+ */
 include_once(get_template_directory() . '/post-type/pt-news.php');
-// Include short-code
+/*
+ * Include short-code
+ */
 include_once(get_template_directory() . '/shortcode/related-news.php');
 include_once(get_template_directory() . '/shortcode/shared-news.php');
+/*
+ * Including theme-setting
+ */
+require_once(get_template_directory() . '/core/catarory-activate-options.php');
 ?>

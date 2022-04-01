@@ -20,10 +20,12 @@
                 $post_link = get_the_permalink();
                 ?>
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="<?php echo $post_link ?>" class="news-card post-content">
-                        <div class="post-item mb-2 mb-lg-5 pb-4">
+                    <div class="news-card post-content">
+                        <div class="post-item mb-lg-5 pb-lg-4">
                             <div class="post-img-contain">
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
+                                <a href="<?php echo $post_link ?>">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
+                                </a>
                             </div>
                             <div class="post-info-contain">
                                 <div class="heading d-flex align-items-center mt-4">
@@ -32,7 +34,7 @@
                                     </div>
                                     <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
                                 </div>
-                                <div class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></div>
+                                <a href="<?php echo $post_link ?>" class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></a>
                                 <div class="item-post-time my-4">
                                     <div class="categories">
                                         <?php
@@ -49,9 +51,10 @@
                                     </div>
                                 </div>
                                 <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
+                                <div><a href="<?php echo $post_link ?>" class="body text--green">See more</a></div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             <?php
             endwhile;

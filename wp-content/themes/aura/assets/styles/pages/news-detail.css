@@ -202,3 +202,10 @@ section.news-details .social-group .elementor-row {
 .news-details .content.body a {
     color: var(--aura-green);
 }
+.news-details .social-group .elementor-container.elementor-column-gap-default {
+    justify-content: start !important;
+    margin: 0 -16px !important;
+}
+.news-details .social-group .elementor-column {
+    width: auto !important;
+}

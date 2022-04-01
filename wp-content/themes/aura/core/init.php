@@ -84,3 +84,25 @@ function remove_unit_tag($url){
     $new_url = $remove_unit_tag[0];
     return $new_url;
 }
+/*
+ * Add theme setting
+ */
+//add new menu for theme-options page with page callback theme-options-page.
+add_theme_page("Theme Option", "Theme Option", "manage_options", "theme-options", "theme_option_page", null, 99);
+function theme_option_page() {
+    ?>
+    <div class="wrap">
+        <h1>Theme Options Page</h1>
+        <form method="post" action="options.php">
+            <?php
+            // display settings field on theme-option page
+            settings_fields("theme-options-grp");
+
+            // display all sections for theme-options page
+            do_settings_sections("theme-options");
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}

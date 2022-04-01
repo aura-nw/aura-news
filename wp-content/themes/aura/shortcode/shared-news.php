@@ -24,21 +24,22 @@ function createShareNews($attr)
         <div class="sub-text">Share Post</div>
         <div class="social-btn-group d-flex">
             <a class="me-3" href="' . $telegramLink . '">
-                <img src="' . $telegramIcon . '" alt="" width="18" height="18">
+                <i class="aura-icon icon--switch-stage aura-icon-telegram"></i>
             </a>
             <a class="me-3" href="' . $twitterLink . '">
-                <img src="' . $twitterIcon . '" alt="" width="18" height="18">
+                <i class="aura-icon icon--switch-stage aura-icon-twitter"></i>
+            </a>
             <a class="me-3" href="' . $facebookLink . '">
-                <img src="' . $facebookIcon . '" alt="" width="18" height="18">
+                <i class="aura-icon icon--switch-stage aura-icon-fb"></i>
             </a>
             <a class="me-3" href="' . $pinterestLink . '">
-                <img src="' . $pinterestIcon . '" alt="" width="18" height="18">
+                <i class="aura-icon icon--switch-stage aura-icon-pinterest"></i>
             </a>
             <a class="me-3" href="' . $linkedinLink . '">
-                <img src="' . $linkedinIcon . '" alt="" width="18" height="18">
+                <i class="aura-icon icon--switch-stage aura-icon-linkedin"></i>
             </a>
             <a class="me-3" href="' . $tumblrLink . '">
-                <img src="' . $tumblrIcon . '" alt="" width="18" height="18">
+                <i class="aura-icon icon--switch-stage aura-icon-tumblr"></i>
             </a>
         </div>
     </div>

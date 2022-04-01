@@ -45,20 +45,14 @@
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
                                 <?php
-                                // get all news category
-                                $argsCats = array(
-                                    'hide_empty' => 0,
-                                    'pad_counts' => true,
-                                    'taxonomy'=> 'category',
-                                    'type' => 'news'
-                                );
-                                $categoryArr = get_categories($argsCats);
-                                // loop category array -> print all category
-                                foreach ($categoryArr as $key=>$cat   ) {
+                                // get categories activated
+                                $header_menu_cats =  get_option('header_menu_cats');
+                                foreach ($header_menu_cats as $cat) {
+                                    $category = get_term_by('slug', $cat, 'category');
                                     ?>
                                     <li>
-                                        <a href="announcement/?category=<?php echo $cat->slug ?>"
-                                           class="dropdown-item sub-text-redig" target="_blank"><?php echo $cat->name; ?>
+                                        <a href="announcement/?category=<?php echo $category->slug ?>"
+                                           class="dropdown-item sub-text-redig" target="_blank"><?php echo $category->name; ?>
                                         </a>
                                     </li>
                                     <?php

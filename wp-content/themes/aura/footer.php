@@ -30,27 +30,20 @@
                         </a>
                     </div>
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row px-lg-5">
                             <div class="col-6 col-md-3">
-                                <div class="body contact__title">Home</div>
+                                <a href="/" class="body contact__title">Home</a>
                             </div>
                             <div class="col-6 col-md-3">
                                 <a href="/announcement/" target="_blank" class="body contact__title">Annoucement</a>
                                 <div class="body mt-2 mt-md-5">
-                                    <div class="mb-4"><a target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></div>
                                     <?php
-                                    // get all news category
-                                    $argsCats = array(
-                                        'hide_empty' => 0,
-                                        'pad_counts' => true,
-                                        'taxonomy'=> 'category',
-                                        'type' => 'news'
-                                    );
-                                    $categoryArr = get_categories($argsCats);
-                                    // loop category array -> print all category
-                                    foreach ($categoryArr as $key=>$cat   ) {
+                                    // get categories activated
+                                    $footer_menu_cats =  get_option('footer_menu_cats');
+                                    foreach ($footer_menu_cats as $cat) {
+                                        $category = get_term_by('slug', $cat, 'category');
                                         ?>
-                                        <div class="mb-4"><a target="_blank" href="announcement/?category=<?php echo $cat->slug ?>"><?php echo $cat->name; ?></a></div>
+                                        <div class="mb-4"><a target="_blank" href="announcement/?category=<?php echo $category->slug ?>"><?php echo $category->name; ?></a></div>
                                         <?php
                                     }
                                     ?>
