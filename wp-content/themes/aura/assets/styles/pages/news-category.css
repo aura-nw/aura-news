@@ -1,0 +1,16 @@
+.news-category {
+    margin-top: 26px;
+    margin-bottom: 40px;
+}
+.news-card__list {
+    margin-top: 32px;
+}
+@media (min-width: 992px) {
+    .news-category {
+        margin-top: 120px;
+        margin-bottom: 80px;
+    }
+    .news-card__list {
+        margin-top: 50px;
+    }
+}

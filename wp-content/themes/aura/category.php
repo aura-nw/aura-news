@@ -1,4 +1,9 @@
 <?php
     get_header();
+?>
+    <section>
+        hello
+    </section>
+<?php
     get_footer();
 ?>

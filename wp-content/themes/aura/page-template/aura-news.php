@@ -58,8 +58,8 @@ $thePostArr = query_posts($args);
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 col-12">
-                <div class="category-list d-flex">
+            <div class="col-12">
+                <div class="category-list d-flex justify-content-center">
                     <?php
                     // loop category array -> print all category
                     foreach ($categoryArr as $key=>$cat   ) {
@@ -81,16 +81,8 @@ $thePostArr = query_posts($args);
                     ?>
                 </div>
             </div>
-            <div class="col-lg-3 col-12">
-                <form class="search-bar-form text-start text-lg-end"
-                      method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-                    <input id="search-bar" type="text" name="s" placeholder="Search..." />
-                    <input type="hidden" name="post_type" value="news" />
-                    <button type="submit" </button>
-                </form>
-            </div>
         </div>
-        <div class="row post-box">
+        <div class="row post-box news-card__list">
             <?php
             // loop all post (news) -> print post
             if (have_posts()) :
@@ -99,34 +91,36 @@ $thePostArr = query_posts($args);
                     $post_link = get_the_permalink();
                     ?>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <a href="<?php echo $post_link ?>" class="post-content">
-                            <div class="post-item mb-5 pb-4">
+                        <a href="<?php echo $post_link ?>" class="news-card post-content">
+                            <div class="post-item mb-lg-5 pb-lg-4">
                                 <div class="post-img-contain">
                                     <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
                                 </div>
-                                <div class="heading d-flex align-items-center mt-4">
-                                    <div class="author-avatar ms-0">
-                                        <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
+                                <div class="post-info-contain">
+                                    <div class="heading d-flex align-items-center mt-4">
+                                        <div class="author-avatar ms-0">
+                                            <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
+                                        </div>
+                                        <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
                                     </div>
-                                    <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
+                                    <div class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></div>
+                                    <div class="item-post-time my-4">
+                                        <div class="categories">
+                                            <?php
+                                            // Get all category that post belong to that
+                                            $cats =  get_the_terms(get_the_ID(), 'category');
+                                            foreach ($cats as $cat) {
+                                                ?>
+                                                <!-- Print category -->
+                                                <span class="category mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
+                                                <?php
+                                            }
+                                            ?>
+                                            <div class="mt-3 mt-sm-0"><?php echo get_the_date() ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
                                 </div>
-                                <div class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></div>
-                                <div class="item-post-time my-4">
-                                    <div class="categories">
-                                        <?php
-                                        // Get all category that post belong to that
-                                        $cats =  get_the_terms(get_the_ID(), 'category');
-                                        foreach ($cats as $cat) {
-                                        ?>
-                                            <!-- Print category -->
-                                            <span class="category mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
-                                        <?php
-                                        }
-                                        ?>
-                                        <div><?php echo get_the_date() ?></div>
-                                    </div>
-								</div>
-                                <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
                             </div>
                         </a>
                     </div>

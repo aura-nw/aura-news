@@ -35,11 +35,25 @@
                                 <div class="body contact__title">Home</div>
                             </div>
                             <div class="col-6 col-md-3">
-                                <div class="body contact__title">Annoucement</div>
+                                <a href="/announcement/" target="_blank" class="body contact__title">Annoucement</a>
                                 <div class="body mt-2 mt-md-5">
-                                    <div class="mb-4"><button type="button">Partnership</button></div>
-                                    <div class="mb-4"><button type="button">News</button></div>
                                     <div class="mb-4"><a target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">Careers</a></div>
+                                    <?php
+                                    // get all news category
+                                    $argsCats = array(
+                                        'hide_empty' => 0,
+                                        'pad_counts' => true,
+                                        'taxonomy'=> 'category',
+                                        'type' => 'news'
+                                    );
+                                    $categoryArr = get_categories($argsCats);
+                                    // loop category array -> print all category
+                                    foreach ($categoryArr as $key=>$cat   ) {
+                                        ?>
+                                        <div class="mb-4"><a target="_blank" href="announcement/?category=<?php echo $cat->slug ?>"><?php echo $cat->name; ?></a></div>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +61,7 @@
                 </div>
                 <div class="col-12 col-lg-3 footer__cta order-3 pb-10 pb-lg-0 flex-xl-shrink-0 flex-xl-grow-1">
                     <div class="footer__cta-contain">
-                        <div class="body text-gradient">Never miss an opportunity!</div>
+                        <div class="body text-gradient d-inline">Never miss an opportunity!</div>
                         <div class="small-text mt-2 mt-md-5 -max-width-256">
                             Sign up now for exclusive events, feature releases, announcements, plus few surprises!
                         </div>
@@ -66,7 +80,7 @@
         <div class="container">
             <div class="d-lg-flex justify-content-between align-items-center flex-lg-row-reverse">
                 <div class="my-2 my-lg-0">
-                    <?php echo do_shortcode('[elementor-template id="171"]'); ?>
+                    <?php echo do_shortcode('[elementor-template id="905"]'); ?>
                 </div>
                 <div class="caption-2 text-center text-lg-left my-2 my-lg-0">Copyright © 2022 Aura Network. All rights reserved</div>
             </div>

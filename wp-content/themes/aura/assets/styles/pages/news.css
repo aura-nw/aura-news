@@ -98,25 +98,44 @@ section.news .post-box {
     margin-right: -22.5px;
 }
 
-section.news .post-content {
+.news-card.post-content {
     color: #FCFCFD;
     display: block;
     text-decoration: none;
-    padding: 0 16px;
     transition: all .35s ease-in-out;
+    padding: 0 16px;
 }
 
-section.news .post-content .post-item {
+.news-card.post-content .post-info-contain {
+    padding: 0 16px;
+}
+
+@media (min-width: 992px) {
+    .news-card.post-content .post-info-contain {
+        padding: 0;
+    }
+}
+
+.news-card.post-content .post-item {
     border-radius: 19px;
 }
 
-section.news .post-content:hover .post-item .post-title {
+.news-card.post-content .post-item .post-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    min-height: 120px;
+    -webkit-box-orient: vertical;
+}
+.news-card.post-content:hover .post-item .post-title {
     background: var(--aura-gradient-simple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-section.news .post-content .post-img-contain {
+.news-card.post-content .post-img-contain {
     position: relative;
     overflow: hidden;
     border-radius: 19px;
@@ -126,17 +145,17 @@ section.news .post-content .post-img-contain {
     transition: all .35s ease-in-out;
 }
 
-section.news .post-content:hover .post-img-contain {
+.news-card.post-content:hover .post-img-contain {
     border: 2px solid var(--aura-neutrals-3);
     box-shadow: 0 2px 36px 12px #31313140;
 }
 
-section.news .post-content .post-img-contain:before {
+.news-card.post-content .post-img-contain:before {
     content: "";
     display: block;
     padding-top: 60.34482758620%;
 }
-section.news .post-content .post-img {
+.news-card.post-content .post-img {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -144,22 +163,18 @@ section.news .post-content .post-img {
     left: 0;
     background-color: var(--aura-black);
 }
-@media (max-width: 375px) {
-    section.news .post-content .post-img {
-        /*height: 170px;*/
-    }
-}
+
 @media (min-width: 576px) and (max-width: 992px) {
-    section.news .post-content .post-img {
+    .news-card.post-content .post-img {
         width: auto;
     }
 }
-section.news .post-content .item-post-time {
+.news-card.post-content .item-post-time {
     font-size: 1.4rem;
     line-height: 2.4rem;
 }
 
-section.news .post-content .item-post-txt {
+.news-card.post-content .item-post-txt {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -169,12 +184,12 @@ section.news .post-content .item-post-txt {
     color: #777E90;
 }
 
-section.news .search-bar-form {
+.search-bar-form {
     position: relative;
     text-align: right;
 }
 
-section.news .search-bar-form button {
+.search-bar-form button {
     width: 20px;
     height: 44px;
     background: url(../../images/icons/basic/seach.png) center no-repeat;
@@ -182,7 +197,7 @@ section.news .search-bar-form button {
     right: 15px;
 }
 
-section.news #search-bar {
+#search-bar {
     width: 100%;
     padding: 10px 15px;
     padding-right: 60px;
@@ -195,16 +210,16 @@ section.news #search-bar {
     line-height: 2.4rem;
 }
 
-section.news #search-bar::placeholder {
+#search-bar::placeholder {
     color: var(--aura-white);
 }
 
-section.news .categories {
+.news-card .categories {
 	display: flex;
     flex-wrap: wrap;
 }
 
-section.news .categories .category {
+.news-card .categories .category {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -226,7 +241,6 @@ section.news .categories .category {
     section.news .tab-content{
         text-align: center;
         margin-bottom: 3rem;
-        /* width: 100%; */
     }
     section.news .tab-content a {
         margin-right: 1rem;
@@ -240,5 +254,14 @@ section.news .categories .category {
     section.news .sub-text{
         font-size: 2rem !important;
         line-height: 2.7rem !important;
+    }
+    .news-card__list .news-card {
+        border-bottom: 1px solid var(--aura-neutrals-3);
+        margin-bottom: 24px;
+    }
+}
+@media (max-width: 767.99px) {
+    .news-card.post-content .post-item .post-title {
+        min-height: unset;
     }
 }

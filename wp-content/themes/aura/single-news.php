@@ -68,7 +68,7 @@ while (have_posts()) :
         <div class="mt-5">
             <div class="body bold">Follow us on:</div>
             <div class="social-group">
-                <?php echo do_shortcode('[elementor-template id="171"]'); ?>
+                <?php echo do_shortcode('[elementor-template id="905"]'); ?>
             </div>
         </div>
     </div>

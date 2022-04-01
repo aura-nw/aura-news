@@ -12,7 +12,7 @@
 </head>
 <body <?php body_class(); ?>>
 <nav class="navbar navbar-expand-lg py-4 pb-5 pb-lg-4" id="headerMenuNavbar">
-    <div class="container-fluid">
+    <div class="container-fluid nav-contain px-0">
         <a class="d-lg-none" href="/">
             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
                  src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
@@ -44,17 +44,44 @@
                                 ANNOUNCEMENT
                             </button>
                             <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
-                                <li><button class="dropdown-item sub-text-redig">PARTNERSHIP</button></li>
-                                <li><button class="dropdown-item sub-text-redig">NEWS</button></li>
-                                <li><a class="dropdown-item sub-text-redig" target="_blank" href="https://aura-network.notion.site/Aura-Job-Board-172bb39a89d844b0a0e1d8871026dc23">CAREERS</a></li>
+                                <?php
+                                // get all news category
+                                $argsCats = array(
+                                    'hide_empty' => 0,
+                                    'pad_counts' => true,
+                                    'taxonomy'=> 'category',
+                                    'type' => 'news'
+                                );
+                                $categoryArr = get_categories($argsCats);
+                                // loop category array -> print all category
+                                foreach ($categoryArr as $key=>$cat   ) {
+                                    ?>
+                                    <li>
+                                        <a href="announcement/?category=<?php echo $cat->slug ?>"
+                                           class="dropdown-item sub-text-redig" target="_blank"><?php echo $cat->name; ?>
+                                        </a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="flex-shrink-0 mt-5 mt-lg-0 social-group">
-                <!-- 171 -->
-                <?php echo do_shortcode('[elementor-template id="171"]'); ?>
+            <div class="flex-shrink-0 mt-5 mt-lg-0">
+                <div class="d-flex">
+                    <form class="search-bar-form text-start text-lg-end d-none d-lg-block"
+                          method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+                        <input id="search-bar" type="text" name="s" placeholder="Search..." />
+                        <input type="hidden" name="post_type" value="news" />
+                        <button type="submit"></button>
+                    </form>
+                    <div class="social-group">
+                        <!-- 171 -->
+                        <?php echo do_shortcode('[elementor-template id="905"]'); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

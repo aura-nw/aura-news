@@ -6,6 +6,14 @@
     z-index: 5;
     background-color: var(--aura-black);
 }
+.nav-contain {
+    margin: 0 16px;
+}
+@media (min-width: 991px) {
+    .nav-contain {
+        margin: 0 40px;
+    }
+}
 .navbar .navbar-toggler {
     width: 34px;
     height: 34px;
@@ -175,6 +183,10 @@
     background-clip: content-box, border-box;
     box-shadow: 2px 1000px 1px #141416 inset;
 }
+
+.navbar .social-group {
+    margin-left: 14px;
+}
 @media (max-width: 991px) {
     .navbar .social-group {
         position: absolute;
@@ -182,6 +194,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: fit-content;
+        margin-left: 0;
     }
 }
 .navbar .social-group .elementor-container.elementor-column-gap-default {
