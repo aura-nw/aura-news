@@ -6,19 +6,20 @@
 ?>
 
 <section class="container search-container news">
-    <div class="row">
-        <h2 class="h2 d-flex justify-content-center">
-            We Found <?php echo $resultNumber . $resultString; ?> With "<?php echo get_query_var('s'); ?>"
-        </h2>
-    </div>
-
-    <div class="row news-card__list">
-        <?php
-        if ( have_posts() ) : //
-            while( have_posts() ) : the_post();
-                $post_title = get_the_title();
-                $post_link = get_the_permalink();
-                ?>
+    <?php
+    if ( have_posts() ) : //
+        ?>
+        <div class="row">
+            <h2 class="h2 d-flex justify-content-center">
+                We Found <?php echo $resultNumber . $resultString; ?> With "<?php echo get_query_var('s'); ?>"
+            </h2>
+        </div>
+        <div class="row news-card__list">
+    <?php
+        while( have_posts() ) : the_post();
+            $post_title = get_the_title();
+            $post_link = get_the_permalink();
+            ?>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="news-card post-content">
                         <div class="post-item mb-lg-5 pb-lg-4">
@@ -56,11 +57,25 @@
                         </div>
                     </div>
                 </div>
-            <?php
-            endwhile;
-            wp_reset_postdata();
-        endif;?>
-    </div>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+        ?>
+         </div>
+    <?php
+    else :
+    ?>
+        <div class="row">
+            <div class="col-12 text-center search--no-result">
+                <img src="<?php echo IMAGE_URL.'/backgrounds/404@2x.png'?>"
+                     srcset="<?php echo IMAGE_URL.'/backgrounds/404@1x.png'?> 1x, <?php echo IMAGE_URL.'/backgrounds/404@2x.png'?> 2x" alt=""/>
+                <div class="body text--light-gray mt-5">We found <?php echo $resultNumber . $resultString; ?> result with "<?php echo get_query_var('s'); ?>"</div>
+                <div class="body text--light-gray">Please try searching with another keyword</div>
+            </div>
+        </div>
+    <?php
+        endif;
+    ?>
 </section>
 
 <?php

@@ -1,6 +1,5 @@
 $(document).ready(function(){
     hoverMenu();
-    slickInit();
 });
 
 function hoverMenu() {
@@ -31,23 +30,23 @@ function hoverMenu() {
     }
 }
 
-function slickInit() {
-    const newsRelatedList = $("#news-related-list");
-    if (newsRelatedList !== undefined) {
-        newsRelatedList.slick({
-            infinite: false,
-            slidesToShow: 1,
-            mobileFirst: true,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                    },
-                }
-            ],
-        });
-    }
-}
+// function slickInit() {
+//     const newsRelatedList = $("#news-related-list");
+//     if (newsRelatedList !== undefined) {
+//         newsRelatedList.slick({
+//             infinite: false,
+//             slidesToShow: 1,
+//             mobileFirst: true,
+//             slidesToScroll: 1,
+//             responsive: [
+//                 {
+//                     breakpoint: 767,
+//                     settings: {
+//                         slidesToShow: 2,
+//                         slidesToScroll: 1,
+//                     },
+//                 }
+//             ],
+//         });
+//     }
+// }

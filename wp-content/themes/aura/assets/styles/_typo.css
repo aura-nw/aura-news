@@ -43,6 +43,11 @@ h4, .h4 {
     line-height: 2.4rem !important;
     font-family: 'SFProDisplay' !important;
 }
+.small-body {
+    font-size: 1.4rem !important;
+    line-height: 1.8rem !important;
+    font-family: 'SFProDisplay' !important;
+}
 .small-text {
     font-size: 1.2rem !important;
     line-height: 1.6rem !important;
@@ -82,6 +87,11 @@ h4, .h4 {
     .body-mob {
         font-size: 1.6rem !important;
         line-height: 2.4rem !important;
+        font-family: 'SFProDisplay' !important;
+    }
+    .small-body-mob {
+        font-size: 1.4rem !important;
+        line-height: 1.8rem !important;
         font-family: 'SFProDisplay' !important;
     }
     .small-text-mob {

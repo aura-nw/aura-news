@@ -21,39 +21,20 @@ function createRelatedNews($attr)
     $htmlRender = '
     <div class="news-related">
         <div class="sub-text mb-3 mb-lg-4">Related Posts</div>
-        <div id="news-related-list" class="news-related-list mb-2 d-lg-none">
-    ';
+        <div class="news-related-list mb-2">';
     if ($postArr > 0) {
         foreach ($postArr as $post) {
             $post_id = $post->ID;
             $htmlRender = $htmlRender . '
             <div class="post-item">
-                <a href="' . get_the_permalink($post_id) . '">
-                    <img class="item-thumbnail" src="' . wp_get_attachment_url(get_post_thumbnail_id($post_id)) . '" alt="' . get_the_title($post_id) . '" width="100%" style="height: 160px">
-                    <div class="item-title text--white body">' . get_the_title($post_id) . '</div>
+                <a href="' . get_the_permalink($post_id) . '" class="d-flex d-lg-block">
+                    <img class="item-thumbnail" src="' . wp_get_attachment_url(get_post_thumbnail_id($post_id)) . '" alt="' . get_the_title($post_id) . '" width="100%">
+                    <div class="item-title text--white body small-body-mob d-flex align-items-center">' . get_the_title($post_id) . '</div>
                 </a>
             </div>
             ';
         }
     }
-    $htmlRender = $htmlRender.'
-        </div>
-        <div class="news-related-list mb-2 d-none d-lg-block">';
-
-    if ($postArr > 0) {
-        foreach ($postArr as $post) {
-            $post_id = $post->ID;
-            $htmlRender = $htmlRender . '
-            <div class="post-item">
-                <a href="' . get_the_permalink($post_id) . '">
-                    <img class="item-thumbnail" src="' . wp_get_attachment_url(get_post_thumbnail_id($post_id)) . '" alt="' . get_the_title($post_id) . '" width="100%" style="height: 160px">
-                    <div class="item-title text--white body">' . get_the_title($post_id) . '</div>
-                </a>
-            </div>
-            ';
-        }
-    }
-
     $htmlRenderEnd = ' 
         </div>
     </div>
