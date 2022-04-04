@@ -1,7 +1,7 @@
 <footer class="footer__blocks ">
         <section class="container">
             <div class="row">
-                <div class="col-12 col-lg-3 footer__menu pb-10 order-2 order-lg-1">
+                <div class="col-12 col-lg-3 footer__menu pb-10 order-2 order-lg-1 d-none d-lg-block">
                     <div class="footer__logo d-none d-lg-block">
                         <a href="/">
                             <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
@@ -10,15 +10,15 @@
                         </a>
                     </div>
                     <div class="menu body mt-lg-5 d-flex d-lg-block">
-                        <div class="body sub-text-mob me-4 mr-lg-0 title">Headquarter</div>
-                        <div>
-                            <ul class="small-text ps-0">
-                                <li>Qwomar Trading Complex,</li>
-                                <li>Blackburne Road,</li>
-                                <li>Port Purcell, Road Town, Tortola,</li>
-                                <li>British Virgin Islands VG1110.</li>
-                            </ul>
-                        </div>
+<!--                        <div class="body sub-text-mob me-4 mr-lg-0 title">Headquarter</div>-->
+<!--                        <div>-->
+<!--                            <ul class="small-text ps-0">-->
+<!--                                <li>Qwomar Trading Complex,</li>-->
+<!--                                <li>Blackburne Road,</li>-->
+<!--                                <li>Port Purcell, Road Town, Tortola,</li>-->
+<!--                                <li>British Virgin Islands VG1110.</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 footer__contact order-1 order-lg-2 d-flex d-lg-block text-lg-center text-xl-start">
