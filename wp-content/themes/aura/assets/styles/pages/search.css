@@ -1,0 +1,120 @@
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+}
+.page-not-found img {
+    width: 180px;
+    height: auto;
+}
+@media (min-width: 992px) {
+    .page-not-found {
+        padding: 200px 0;
+    }
+    .page-not-found img {
+        width: 200px;
+        height: auto;
+    }
+}
+.search--no-result {
+    margin: 50px 0;
+}
+#searchform, #searchFormMob {
+    border: 1.7px solid var(--aura-neutrals-3);
+    border-radius: 25px;
+}
+.search-group .search-bar-form{
+    position: relative;
+}
+.search-group .search-bar-form button {
+    width: 20px;
+    height: 44px;
+    background: url("../../images/icons/basic/seach.png") center no-repeat;
+    position: absolute;
+    right: 15px;
+}
+.style_wrapper {
+    position: absolute;
+    width: 376px;
+    top: 80px;
+    background: transparent;
+    backdrop-filter: unset;
+    border-radius: 20px;
+}
+@media (min-width: 992px) {
+    .style_wrapper {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(30px);
+    }
+}
+.style_dropdownWrapper {
+    padding: 24px;
+    color: #D2D0CE !important;
+    top: 120% !important;
+    min-height: 10rem;
+    width: 100%;
+}
+.style_txtTrending {
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #777E91;
+}
+.style_tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    background: #38383D;
+    border-radius: 6px;
+    margin: 0 8px 12px 0;
+}
+.style_tagWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.style_tagItem {
+    font-size: 12px;
+    line-height: 16px;
+    color: #FCFCFD;
+}
+.style_tagItem:hover {
+    color: #CFB160;
+    background: #333333;
+}
+.navbar-collapse.header-search-mob {
+    display: block !important;
+}
+@media (min-width: 768px) {
+    .navbar-collapse.header-search-mob {
+        display: none !important;
+    }
+}
+@media (max-width: 600px) {
+    #headerSearchToggler {
+        margin-right: 2rem;
+    }
+    .search-group {
+        margin-top: 20px;
+    }
+    .style_wrapper {
+        background: none;
+        top: 150px;
+    }
+    .style_dropdownWrapper {
+        padding: 8px;
+    }
+    .style_tag {
+        margin: 0 12px 12px 0;
+    }
+}

@@ -54,7 +54,7 @@ $thePostArr = query_posts($args);
                         $post_title = get_the_title();
                         $post_link = get_the_permalink();
                         ?>
-                        <div class="col-12 col-md-6 col-lg-4">
+                        <div class="col-12 col-md-6 col-lg-4 news-card__item">
                             <div class="news-card post-content">
                                 <div class="post-item mb-2 mb-lg-5 pb-4">
                                     <div class="post-img-contain">

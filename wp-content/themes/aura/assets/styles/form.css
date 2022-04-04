@@ -31,11 +31,14 @@
 }
 .ajax-loader {display:none !important;}
 .wpcf7-response-output {
-    margin: 8px 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    color: var(--bs-red);
+    display: none !important;
 }
-.wpcf7-not-valid-tip {
-    margin-top: 8px;
-}
+/*.wpcf7-response-output {*/
+/*    margin: 8px 0 !important;*/
+/*    padding: 0 !important;*/
+/*    border: none !important;*/
+/*    color: var(--bs-red);*/
+/*}*/
+/*.wpcf7-not-valid-tip {*/
+/*    margin-top: 8px;*/
+/*}*/

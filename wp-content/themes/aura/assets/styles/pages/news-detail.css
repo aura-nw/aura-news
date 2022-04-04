@@ -154,6 +154,7 @@ section.news-details .social-group .elementor-row {
         height: 120px;
         width: 200px;
         margin-right: 16px;
+        border-radius: 10px;
     }
     .news-related-list .post-item .item-title {
         margin-top: 0;

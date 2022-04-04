@@ -18,7 +18,7 @@ Textdomain: aura
 @import "assets/styles/pages/news-detail.css";
 @import "assets/styles/pages/news.css";
 @import "assets/styles/pages/news-category.css";
-@import "assets/styles/pages/page-not-found.css";
+@import "assets/styles/pages/search.css";
 a:hover, a:focus, button:hover, button:focus {
     text-decoration: none;
     outline: none;

@@ -109,3 +109,10 @@ function theme_option_page() {
     </div>
     <?php
 }
+
+// skip sending cf7 email
+add_filter( 'wpcf7_skip_mail', 'mycustom_wpcf7_skip_mail', 10, 2 );
+function mycustom_wpcf7_skip_mail( $skip_mail, $contact_form ) {
+    if ( 933 == $contact_form->id() ) { $skip_mail = true;    }
+    return $skip_mail;
+}

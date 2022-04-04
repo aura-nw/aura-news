@@ -1,8 +1,12 @@
 <?php
     get_header();
     global $wp_query;
+    global $wpdb;
     $resultNumber = $wp_query->found_posts;
-    $resultString = $resultNumber > 1 ? ' Results' : ' Result';
+    $resultString = $resultNumber > 1 ? ' results' : ' result';
+    $textSearch = strtolower(get_query_var('s'));
+    $table_name = "tds_search_tag_trending";
+    $temp = $wpdb->get_results("INSERT INTO tds_search_tag_trending (key_word, count) VALUES('$textSearch', 0) ON DUPLICATE KEY UPDATE count = count + 1");
 ?>
 
 <section class="container search-container news">
@@ -20,7 +24,7 @@
             $post_title = get_the_title();
             $post_link = get_the_permalink();
             ?>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4 news-card__item">
                     <div class="news-card post-content">
                         <div class="post-item mb-lg-5 pb-lg-4">
                             <div class="post-img-contain">
@@ -69,7 +73,7 @@
             <div class="col-12 text-center search--no-result">
                 <img src="<?php echo IMAGE_URL.'/backgrounds/404@2x.png'?>"
                      srcset="<?php echo IMAGE_URL.'/backgrounds/404@1x.png'?> 1x, <?php echo IMAGE_URL.'/backgrounds/404@2x.png'?> 2x" alt=""/>
-                <div class="body text--light-gray mt-5">We found <?php echo $resultNumber . $resultString; ?> result with "<?php echo get_query_var('s'); ?>"</div>
+                <div class="body text--light-gray mt-5">We found <?php echo $resultNumber . $resultString; ?> with "<?php echo get_query_var('s'); ?>"</div>
                 <div class="body text--light-gray">Please try searching with another keyword</div>
             </div>
         </div>

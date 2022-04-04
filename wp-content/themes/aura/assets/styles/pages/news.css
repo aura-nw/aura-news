@@ -1,5 +1,5 @@
 section.news {
-    margin-bottom: 100px;
+    margin-bottom: 56px;
 }
 section.news .banner-hero {
     margin-bottom: 5.4rem;
@@ -15,6 +15,9 @@ section.news .banner-hero img {
     }
 }
 @media (min-width: 992px) {
+    section.news {
+        margin-bottom: 100px;
+    }
     section.news .banner-hero img {
         height: 600px;
         object-fit: contain;
@@ -236,6 +239,8 @@ section.news .post-box {
 @media (max-width: 992.99px) {
     section.news .post-content {
         padding: 0;
+    }
+    .news-card__list .news-card__item:not(:last-child) .news-card {
         padding-bottom: 32px;
     }
     section.news .tab-content{
@@ -255,7 +260,7 @@ section.news .post-box {
         font-size: 2rem !important;
         line-height: 2.7rem !important;
     }
-    .news-card__list .news-card {
+    .news-card__list .news-card__item:not(:last-child) .news-card {
         border-bottom: 1px solid var(--aura-neutrals-3);
         margin-bottom: 24px;
     }

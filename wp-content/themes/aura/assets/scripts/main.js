@@ -1,5 +1,13 @@
 $(document).ready(function(){
     hoverMenu();
+    // reset email form after submition
+    const emailPopupClose = $('.pum-close.popmake-close');
+    const emailForm = $('.wpcf7-form');
+    if(emailPopupClose !== undefined && emailForm !== undefined) {
+        emailPopupClose[0].addEventListener('click', function () {
+            emailForm[0].reset();
+        })
+    }
 });
 
 function hoverMenu() {

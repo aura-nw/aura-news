@@ -6,22 +6,26 @@ h1, .h1 {
     line-height: 12rem !important;
     font-family: 'Redig' !important;
     display: inline-block;
+    letter-spacing: 0.13rem !important;
 }
 h2, .h2 {
     font-size: 6.4rem !important;
     line-height: 8rem !important;
     font-family: 'Redig' !important;
     display: inline-block;
+    letter-spacing: 0.13rem !important;
 }
 h3, .h3 {
     font-size: 4.8rem !important;
     line-height: 5.6rem !important;
     font-family: 'Redig' !important;
+    letter-spacing: 0.13rem !important;
 }
 h4, .h4 {
     font-size: 3.2rem !important;
     line-height: 3rem !important;
     font-family: 'Redig' !important;
+    letter-spacing: 0.13rem !important;
 }
 .title {
     font-size: 3.2rem !important;
@@ -58,21 +62,25 @@ h4, .h4 {
         font-size: 9.6rem !important;
         line-height: 12rem !important;
         font-family: 'Redig' !important;
+        letter-spacing: 0.13rem !important;
     }
     .h2-mob {
         font-size: 6.4rem !important;
         line-height: 6rem !important;
         font-family: 'Redig' !important;
+        letter-spacing: 0.13rem !important;
     }
     .h3-mob {
         font-size: 4.8rem !important;
         line-height: 5.6rem !important;
         font-family: 'Redig' !important;
+        letter-spacing: 0.13rem !important;
     }
     .h4-mob {
         font-size: 3.2rem !important;
         line-height: 3.8rem !important;
         font-family: 'Redig' !important;
+        letter-spacing: 0.13rem !important;
     }
     .title-mob {
         font-size: 3.2rem !important;
