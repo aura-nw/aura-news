@@ -15,7 +15,8 @@ $argsCats = array(
 );
 $categoryArr = get_categories($argsCats);
 // get first category -> default category in the first time
-$firstCategory = get_categories('taxonomy=category&type=news')[0];
+$home_page_cats =  get_option('home_page_cats');
+$firstCategory = get_term_by( 'slug', get_option('home_page_cats')[0], 'category' );
 // if have category in URL -> get all news belong to that category
 if (isset($_GET['category'])) {
     $args = array(
@@ -62,7 +63,6 @@ $thePostArr = query_posts($args);
                 <div class="category-list d-flex justify-content-center">
                     <?php
                     // get categories activated
-                    $home_page_cats =  get_option('home_page_cats');
                     foreach ($home_page_cats as $key => $cat) {
                         $category = get_term_by('slug', $cat, 'category');
                         ?>
