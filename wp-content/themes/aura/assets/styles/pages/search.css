@@ -34,6 +34,7 @@
     background: url("../../images/icons/basic/seach.png") center no-repeat;
     position: absolute;
     right: 15px;
+    top: 0;
 }
 .style_wrapper {
     position: absolute;
