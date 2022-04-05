@@ -9,49 +9,6 @@ section.news .banner-hero {
 section.news .banner-hero img {
     width: 100%;
 }
-@media (min-width: 768px) {
-    section.news .banner-hero img {
-        object-fit: cover;
-    }
-}
-@media (min-width: 992px) {
-    section.news {
-        margin-bottom: 100px;
-    }
-    section.news .banner-hero img {
-        height: 600px;
-        object-fit: contain;
-    }
-}
-@media (min-width: 1024px) {
-    section.news .banner-hero img {
-        height: 500px;
-        object-fit: cover;
-    }
-}
-@media (min-width: 1200px) {
-    section.news .banner-hero img {
-        height: 500px;
-    }
-}
-@media (min-width: 1440px) {
-    section.news .banner-hero img {
-        height: 664px;
-    }
-}
-@media (min-width: 1600px) {
-    section.news .banner-hero img {
-        height: 800px;
-    }
-}
-@media (min-width: 1920px) {
-    section.news .banner-hero img {
-        height: auto;
-        object-fit: unset;
-        width: 100%;
-        margin: auto;
-    }
-}
 
 section.news .banner-info .sub-title span {
     font-size: 1.4rem;
