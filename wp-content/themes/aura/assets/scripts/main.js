@@ -1,10 +1,17 @@
 $(document).ready(function(){
     hoverMenu();
-    // reset email form after submition
+    // reset email form after click close button in popup
     const emailPopupClose = $('.pum-close.popmake-close');
     const emailForm = $('.wpcf7-form');
     if(emailPopupClose !== undefined && emailForm !== undefined) {
         emailPopupClose[0].addEventListener('click', function () {
+            emailForm[0].reset();
+        })
+    }
+    // reset email form after click overlay outside popup
+    const emailPopupOverlay = document.querySelector( '.pum.pum-overlay' );
+    if(emailPopupOverlay !== undefined && emailForm !== undefined) {
+        emailPopupOverlay.addEventListener('click', function (){
             emailForm[0].reset();
         })
     }

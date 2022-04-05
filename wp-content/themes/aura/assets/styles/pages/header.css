@@ -179,6 +179,8 @@
 
 .navbar .social-group {
     margin-left: 14px;
+    display: flex;
+    align-items: center;
 }
 @media (max-width: 991px) {
     .navbar .social-group {
