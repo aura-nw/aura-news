@@ -144,3 +144,25 @@ h4, .h4 {
 .text--neutrals-8 {
     color: var(--aura-neutrals-8) !important;
 }
+
+/* Typo for ck-editor content */
+.news-details .content.body h1 {
+    font-size: 4.8rem !important;
+    line-height: 5.6rem !important;
+}
+.news-details .content.body h2, .news-details .content.body h3 {
+    font-size: 3.2rem !important;
+    line-height: unset !important;
+}
+.news-details .content.body h4 {
+    font-size: 2.4rem !important;
+    line-height: 3.2rem !important;
+}
+.news-details .content.body .title {
+    font-size: 2rem !important;
+    line-height: 3.2rem !important;
+}
+.news-details .content.body p {
+    font-size: 1.6rem !important;
+    line-height: 2.4rem !important;
+}
