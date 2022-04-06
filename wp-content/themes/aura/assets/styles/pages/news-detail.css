@@ -195,3 +195,10 @@ section.news-details .social-group .elementor-row {
         width: 114px;
     }
 }
+
+.news-details .content.body h1,
+.news-details .content.body h2,
+.news-details .content.body h3,
+.news-details .content.body h4 {
+    margin-bottom: 8px;
+}
