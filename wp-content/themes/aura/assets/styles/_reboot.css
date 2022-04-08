@@ -40,6 +40,15 @@ a {
 a:hover {
     color: var(--aura-white);
 }
-body.page-template {
+body.page-template, body.archive.tag {
     padding-top: 60px;
+}
+.aura-logo {
+    width: 167px;
+    height: 60px;
+    display: block;
+}
+.aura-logo img {
+    width: 100%;
+    object-fit: cover;
 }

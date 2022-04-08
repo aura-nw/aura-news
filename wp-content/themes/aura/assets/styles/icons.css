@@ -86,3 +86,18 @@ i.aura-icon::before {
  background: url("../images/icons/color/pinterest.png") no-repeat center;
  background-size: contain;
 }
+/* white icon - line up */
+.aura-icon-white-line-up::before {
+ background: url("../images/icons/white/line-up.svg") no-repeat center;
+ background-size: contain;
+}
+/* white icon - search */
+.aura-icon-white-search::before {
+ background: url("../images/icons/white/search.svg") no-repeat center;
+ background-size: contain;
+}
+/* white icon - clock */
+.aura-icon-white-clock::before {
+ background: url("../images/icons/white/clock.svg") no-repeat center;
+ background-size: contain;
+}

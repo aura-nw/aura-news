@@ -1,36 +1,17 @@
 <footer class="footer__blocks ">
-    <section class="container">
+    <section class="container px-4">
         <div class="row">
-            <div class="col-12 col-lg-3 footer__menu pb-10 order-2 order-lg-1 d-none d-lg-block">
-                <div class="footer__logo d-none d-lg-block">
-                    <a href="/">
-                        <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
-                             src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
+            <div class="col-12 col-lg-3 footer__menu pb-10">
+                <div class="footer__logo">
+                    <a href="/" class="aura-logo">
+                        <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
+                             src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                              alt="Aura Logo">
                     </a>
-                </div>
-                <div class="menu body mt-lg-5 d-flex d-lg-block">
-<!--                        <div class="body sub-text-mob me-4 mr-lg-0 title">Headquarter</div>-->
-<!--                        <div>-->
-<!--                            <ul class="small-text ps-0">-->
-<!--                                <li>Qwomar Trading Complex,</li>-->
-<!--                                <li>Blackburne Road,</li>-->
-<!--                                <li>Port Purcell, Road Town, Tortola,</li>-->
-<!--                                <li>British Virgin Islands VG1110.</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
                 </div>
             </div>
-            <div class="col-12 col-lg-6 footer__contact order-1 order-lg-2 d-flex d-lg-block text-lg-center text-xl-start">
-                <div class="footer__logo d-lg-none flex-shrink-0 flex-grow-1 me-5">
-                    <a href="/">
-                        <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
-                             src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
-                             alt="Aura Logo">
-                    </a>
-                </div>
-                <div class="container-fluid">
-                    <div class="row px-lg-5">
+            <div class="col-12 col-lg-6 footer__contact d-flex d-lg-block text-lg-center text-xl-start">
+                <div class="row w-100 px-lg-5">
                         <div class="col-6 col-md-3">
                             <a href="/" class="body contact__title">Home</a>
                         </div>
@@ -50,12 +31,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
-            <div class="col-12 col-lg-3 footer__cta order-3 flex-xl-shrink-0 flex-xl-grow-1">
+            <div class="col-12 col-lg-3 footer__cta flex-xl-shrink-0 flex-xl-grow-1">
                 <div class="footer__cta-contain">
                     <div class="body text-gradient d-inline">Never miss an opportunity!</div>
-                    <div class="small-text mt-2 mt-md-5 -max-width-256">
+                    <div class="small-text mt-2 mt-lg-5 -max-width-256 text--light-gray">
                         Sign up now for exclusive events, feature releases, announcements, plus few surprises!
                     </div>
                     <div class="mt-5 -max-width-256">

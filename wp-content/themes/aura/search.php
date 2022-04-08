@@ -41,14 +41,14 @@
                                 </div>
                                 <a href="<?php echo $post_link ?>" class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></a>
                                 <div class="item-post-time my-4">
-                                    <div class="categories">
+                                    <div class="d-flex flex-wrap">
                                         <?php
                                         // Get all category that post belong to that
                                         $cats =  get_the_terms(get_the_ID(), 'category');
                                         foreach ($cats as $cat) {
                                             ?>
                                             <!-- Print category -->
-                                            <span class="category mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
+                                            <span class="aura-tag mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
                                             <?php
                                         }
                                         ?>

@@ -60,7 +60,7 @@ $thePostArr = query_posts($args);
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="category-list d-flex justify-content-center">
+                <div class="d-flex flex-wrap justify-content-center">
                     <?php
                     // get categories activated
                     foreach ($home_page_cats as $key => $cat) {
@@ -109,14 +109,14 @@ $thePostArr = query_posts($args);
                                     </div>
                                     <a href="<?php echo $post_link ?>" class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></a>
                                     <div class="item-post-time my-4">
-                                        <div class="categories">
+                                        <div class="d-flex flex-wrap">
                                             <?php
                                             // Get all category that post belong to that
                                             $cats =  get_the_terms(get_the_ID(), 'category');
                                             foreach ($cats as $cat) {
                                                 ?>
                                                 <!-- Print category -->
-                                                <span class="category mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
+                                                <span class="aura-tag mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
                                                 <?php
                                             }
                                             ?>

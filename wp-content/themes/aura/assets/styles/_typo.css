@@ -33,23 +33,29 @@ h4, .h4 {
     font-family: 'SFProDisplay' !important;
 }
 .sub-text {
-    font-size: 2rem !important;
-    line-height: 2.5rem !important;
+    font-size: 2.4rem !important;
+    line-height: 4rem !important;
     font-family: 'SFProDisplay' !important;
 }
 .sub-text-redig {
-    font-size: 2rem !important;
-    line-height: 2.5rem !important;
+    font-size: 2.4rem !important;
+    line-height: 4rem !important;
     font-family: 'Redig' !important;
+}
+.title-small {
+    font-size: 2rem !important;
+    line-height: 2.4rem !important;
+    font-family: 'SFProDisplay' !important;
 }
 .body {
     font-size: 1.6rem !important;
     line-height: 2.4rem !important;
     font-family: 'SFProDisplay' !important;
 }
-.small-body {
+.body-small {
     font-size: 1.4rem !important;
-    line-height: 1.8rem !important;
+    line-height: unset !important;
+    font-weight: 500;
     font-family: 'SFProDisplay' !important;
 }
 .small-text {
@@ -88,8 +94,13 @@ h4, .h4 {
         font-family: 'SFProDisplay' !important;
     }
     .sub-text-mob {
+        font-size: 2.4rem !important;
+        line-height: 4rem !important;
+        font-family: 'SFProDisplay' !important;
+    }
+    .title-small-mob {
         font-size: 2rem !important;
-        line-height: 2.5rem !important;
+        line-height: 2.4rem !important;
         font-family: 'SFProDisplay' !important;
     }
     .body-mob {
@@ -97,9 +108,10 @@ h4, .h4 {
         line-height: 2.4rem !important;
         font-family: 'SFProDisplay' !important;
     }
-    .small-body-mob {
+    .body-small-mob {
         font-size: 1.4rem !important;
-        line-height: 1.8rem !important;
+        line-height: unset !important;
+        font-weight: 500;
         font-family: 'SFProDisplay' !important;
     }
     .small-text-mob {
@@ -156,11 +168,15 @@ h4, .h4 {
 }
 .news-details .content.body h4 {
     font-size: 2.4rem !important;
-    line-height: 3.2rem !important;
+    line-height:4rem !important;
 }
-.news-details .content.body .title {
+.news-details .content.body h5 {
     font-size: 2rem !important;
-    line-height: 3.2rem !important;
+    line-height: unset !important;
+}
+.news-details .content.body h6 {
+    font-size: 1.4rem !important;
+    line-height: unset !important;
 }
 .news-details .content.body p {
     font-size: 1.6rem !important;

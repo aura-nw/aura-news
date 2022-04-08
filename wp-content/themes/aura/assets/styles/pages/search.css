@@ -25,88 +25,151 @@
     border: 1.7px solid var(--aura-neutrals-3);
     border-radius: 25px;
 }
-.search-group .search-bar-form{
+
+.search-group {
+    margin-top: 20px;
+}
+
+.search-group .search-bar {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    padding-right: 60px;
+    color: #fff;
+    background: 0 0;
+    height: 44px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+
+.search-group .search-bar-form {
     position: relative;
 }
-.search-group .search-bar-form button {
-    width: 20px;
-    height: 44px;
-    background: url("../../images/icons/basic/seach.png") center no-repeat;
+.search-group .search-bar-form button.btn-reset, .search-group .search-bar-form button.btn-submit {
     position: absolute;
     right: 15px;
-    top: 0;
+    top: 50%;
+    padding: 0;
+    transform: translateY(-50%);
 }
+
+.search-group .search-bar-form button.btn-reset {
+    width: 24px;
+    height: 24px;
+    background: url("../../images/icons/basic/close-circle.png") center no-repeat;
+    background-size: contain;
+    display: block;
+}
+
+.search-group .search-bar-form button.btn-submit {
+    width: 18px;
+    height: 18px;
+    background: url("../../images/icons/basic/seach.png") center no-repeat;
+    background-size: contain;
+    display: none;
+}
+
+.search-bar-form input.search-bar:placeholder-shown ~ .btn-submit {
+    display: block;
+}
+
+.search-bar-form input.search-bar:placeholder-shown ~ .btn-reset {
+    display: none;
+}
+
 .style_wrapper {
     position: absolute;
-    width: 376px;
-    top: 80px;
     background: transparent;
     backdrop-filter: unset;
     border-radius: 20px;
-}
-@media (min-width: 992px) {
-    .style_wrapper {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(30px);
-    }
+    display: none;
 }
 .style_dropdownWrapper {
-    padding: 24px;
+    padding: 24px 0;
     color: #D2D0CE !important;
     top: 120% !important;
     min-height: 10rem;
     width: 100%;
+    overflow: hidden;
 }
-.style_txtTrending {
-    font-family: 'SF Pro Display';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.02em;
-    text-transform: capitalize;
-    color: #777E91;
+
+.style_dropdownWrapper i.aura-icon {
+    font-size: 1.6rem;
 }
-.style_tag {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 16px;
-    background: #38383D;
-    border-radius: 6px;
-    margin: 0 8px 12px 0;
+
+.style_dropdownWrapper .aura-tag {
+    margin-bottom: 12px;
 }
-.style_tagWrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-.style_tagItem {
-    font-size: 12px;
-    line-height: 16px;
-    color: #FCFCFD;
-}
-.style_tagItem:hover {
-    color: #CFB160;
-    background: #333333;
-}
+
 .navbar-collapse.header-search-mob {
     display: block !important;
 }
+
+.tab-trending {
+    height: auto;
+    opacity: 1;
+    transition: all .35s ease-in-out;
+}
+
+.tab-search {
+    opacity: 0;
+    height: 0;
+    transform: translateX(110%);
+    transition: all .35s ease-in-out;
+}
+
+.tab-trending.hide {
+    transform: translateX(-110%);
+    height: 0;
+    opacity: 0;
+}
+
+.tab-search.show {
+    height: auto;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.tab-search .tab-content {
+    display: none;
+}
+
+.tab-search.show .tab-content {
+    display: block;
+}
+
 @media (min-width: 768px) {
     .navbar-collapse.header-search-mob {
         display: none !important;
     }
 }
+
+@media (min-width: 992px) {
+    .search-group {
+        margin-top: 0;
+    }
+
+    .style_wrapper {
+        background: rgba(252, 252, 253, 0.05);
+        backdrop-filter: blur(10px);
+        width: 327px;
+        top: 80px;
+    }
+
+    .style_dropdownWrapper {
+        padding: 24px;
+        padding-bottom: 12px;
+    }
+
+    #searchform {
+        min-width: 327px;
+    }
+}
+
 @media (max-width: 600px) {
     #headerSearchToggler {
         margin-right: 2rem;
-    }
-    .search-group {
-        margin-top: 20px;
     }
     .style_wrapper {
         background: none;

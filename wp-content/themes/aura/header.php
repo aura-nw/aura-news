@@ -19,9 +19,9 @@ $catSlug = $_GET['category'];
 ?>
 <nav class="navbar navbar-expand-lg py-4 pb-5 pb-lg-4" id="headerMenuNavbar">
     <div class="container-fluid nav-contain px-0">
-        <a class="d-lg-none" href="/">
-            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
-                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
+        <a class="d-lg-none aura-logo" href="/">
+            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
+                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                  alt="Aura Logo">
         </a>
         <div class="d-flex">
@@ -34,23 +34,55 @@ $catSlug = $_GET['category'];
                 <i class="icon"></i>
             </button>
         </div>
-        <div class="d-block d-sm-none col-12">
+        <div class="d-block d-lg-none col-12">
             <div class="collapse navbar-collapse" id="headerSearchMenu">
                 <div class="search-group">
                     <form class="search-bar-form" method="get" id="searchFormMob" action="<?php bloginfo('home'); ?>/">
-                        <input class="search-bar" type="text" name="s" placeholder="Search..." autocomplete="off" />
+                        <input class="search-bar" type="text" name="s" placeholder="Search..." autocomplete="off" onkeyup="handleInput(this.value)"/>
                         <input type="hidden" name="post_type" value="news" />
-                        <button type="submit" class="btn-search"></button>
+                        <button type="reset" class="btn-reset" onclick="handleInput('')"></button>
+                        <button type="submit" class="btn-submit"></button>
                     </form>
-                    <div class="style_wrapper style_start d-block" id="box_search">
-                        <div class="style_dropdownWrapper">
-                            <div>
+                    <div class="style_wrapper style_start d-block">
+                        <div class="style_dropdownWrapper" id="mob-dropdownWrapper">
+                            <div class="tab-trending">
                                 <div>
-                                    <div class="style_txtTrending">Trending Search</div>
-                                    <div class="style_tagWrapper">
+                                    <div class="d-flex align-items-center text--white body-small fw-normal">
+                                        <i class="icon aura-icon aura-icon-white-line-up me-3"></i>
+                                        <span>Trending Search</span>
+                                    </div>
+                                    <div class="d-flex flex-wrap mt-4">
                                         <?php foreach($temp as $value): ?>
-                                            <a href="javascript:void(0);" onclick="onSearchHeader('<?= ucwords($value->key_word) ?>')">
-                                                <div class="style_tag style_tagItem"><div>#<?= ucwords($value->key_word) ?></div></div>
+                                            <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
+                                                <span>#<?= ucwords($value->key_word) ?></span>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="d-flex align-items-center text--white body-small fw-normal">
+                                        <i class="icon aura-icon aura-icon-white-clock me-3"></i>
+                                        <span>History search</span>
+                                    </div>
+                                    <div class="d-flex flex-wrap mt-4">
+                                        <?php foreach($temp as $value): ?>
+                                            <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
+                                                <span>#<?= ucwords($value->key_word) ?></span>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-search">
+                                <div class="tab-content">
+                                    <div class="d-flex align-items-center text--white body-small fw-normal">
+                                        <i class="icon aura-icon aura-icon-white-search me-3"></i>
+                                        <span>Search &nbsp;</span> "<span id="mob-search-key"></span>"
+                                    </div>
+                                    <div class="d-flex flex-wrap mt-4">
+                                        <?php foreach($temp as $value): ?>
+                                            <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
+                                                <span>#<?= ucwords($value->key_word) ?></span>
                                             </a>
                                         <?php endforeach; ?>
                                     </div>
@@ -65,9 +97,9 @@ $catSlug = $_GET['category'];
             <div class="d-lg-flex justify-content-center justify-content-lg-start w-100">
                 <ul class="navbar-nav nav-menu align-items-lg-center">
                     <li class="nav-item d-none d-lg-block">
-                        <a class="navbar-brand" href="/">
-                            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x-v2.png'?> 2x"
-                                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x-v2.png'?>"
+                        <a class="navbar-brand aura-logo" href="/">
+                            <img srcset="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?> 1x, <?php echo IMAGE_URL.'/auraMainLogo-2x.png'?> 2x"
+                                 src="<?php echo IMAGE_URL.'/auraMainLogo-1x.png'?>"
                                  alt="Aura Logo">
                         </a>
                     </li>
@@ -91,7 +123,7 @@ $catSlug = $_GET['category'];
                                     ?>
                                     <li>
                                         <a href="announcement/?category=<?php echo $category->slug ?>"
-                                           class="dropdown-item sub-text-redig" target="_blank"><?php echo $category->name; ?>
+                                           class="dropdown-item h4" target="_blank"><?php echo $category->name; ?>
                                         </a>
                                     </li>
                                     <?php
@@ -107,19 +139,51 @@ $catSlug = $_GET['category'];
                     <div class="search-group d-none d-sm-block" id="clickBox">
                         <form class="search-bar-form text-start text-lg-end"
                               method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-                            <input class="search-bar" type="text" name="s" placeholder="Search..." autocomplete="off" />
+                            <input class="search-bar" type="text" name="s" placeholder="Search..." autocomplete="off" onkeyup="handleInput(this.value)"/>
                             <input type="hidden" name="post_type" value="news" />
-                            <button type="submit" class="btn-search"></button>
+                            <button type="reset" class="btn-reset" onclick="handleInput('')"></button>
+                            <button type="submit" class="btn-submit"></button>
                         </form>
-                        <div class="style_wrapper style_start" id="box_search">
-                            <div class="style_dropdownWrapper">
-                                <div>
+                        <div class="style_wrapper">
+                            <div class="style_dropdownWrapper" id="des-dropdownWrapper">
+                                <div class="tab-trending">
                                     <div>
-                                        <div class="style_txtTrending">Trending Search</div>
-                                        <div class="style_tagWrapper">
+                                        <div class="d-flex align-items-center text--white body-small">
+                                            <i class="icon aura-icon aura-icon-white-line-up me-3"></i>
+                                            <span>Trending Search</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap mt-4">
                                             <?php foreach($temp as $value): ?>
-                                                <a href="javascript:void(0);" onclick="onSearchHeader('<?= ucwords($value->key_word) ?>')">
-                                                    <div class="style_tag style_tagItem"><div>#<?= ucwords($value->key_word) ?></div></div>
+                                                <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
+                                                    <span>#<?= ucwords($value->key_word) ?></span>
+                                                </a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="d-flex align-items-center text--white body-small">
+                                            <i class="icon aura-icon aura-icon-white-clock me-3"></i>
+                                            <span>History search</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap mt-4">
+                                            <?php foreach($temp as $value): ?>
+                                                <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
+                                                    <span>#<?= ucwords($value->key_word) ?></span>
+                                                </a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-search">
+                                    <div class="tab-content">
+                                        <div class="d-flex align-items-center text--white body-small">
+                                            <i class="icon aura-icon aura-icon-white-search me-3"></i>
+                                            <span>Search &nbsp;</span>"<span id="des-search-key"></span>"
+                                        </div>
+                                        <div class="d-flex flex-wrap mt-4">
+                                            <?php foreach($temp as $value): ?>
+                                                <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
+                                                    <span>#<?= ucwords($value->key_word) ?></span>
                                                 </a>
                                             <?php endforeach; ?>
                                         </div>
@@ -139,35 +203,73 @@ $catSlug = $_GET['category'];
 </nav>
 <script type="application/javascript">
     $(document).ready(function(){
+        // add support class for expanded navbar (full height of window)
         $('#headerMenuToggler').click(function () {
-            if($('#headerMenuToggler').attr('aria-expanded') == 'true') {
+            if($('#headerMenuToggler').attr('aria-expanded') === 'true') {
                 $('#headerMenuNavbar').addClass('expanded');
+                $('#headerSearchToggler').addClass('d-none');
             } else {
                 $('#headerMenuNavbar').removeClass('expanded');
+                $('#headerSearchToggler').removeClass('d-none');
             }
         });
         $('#headerSearchToggler').click(function () {
-            if($('#headerSearchToggler').attr('aria-expanded') == 'true') {
+            if($('#headerSearchToggler').attr('aria-expanded') === 'true') {
                 $('.style_dropdownWrapper').show();
                 $('#headerMenuNavbar').addClass('expanded');
+                $('#headerMenuToggler').addClass('d-none');
             } else {
                 $('.style_dropdownWrapper').hide();
                 $('#headerMenuNavbar').removeClass('expanded');
+                $('#headerMenuToggler').removeClass('d-none');
             }
         });
+        // show popup when click into search box
         $('#searchform').click(function () {
             $('.style_wrapper').show();
         });
-        window.addEventListener('click', function(e){
-            if (document.getElementById('clickBox').contains(e.target)){
-            } else {
-                // Clicked outside the box
-                $('.style_wrapper').hide();
-            }
+        // hide popup when click out search box
+        window.addEventListener('mousedown', function(e){
+            if (!document.getElementById('clickBox').contains(e.target)){
+                    $('.style_wrapper').hide();
+                }
+            });
         });
-    });
 
-    function onSearchHeader($data = null){
-        $(".search-bar:text").val($data);
+    function handleInput(e) {
+        let searchKeyWord = $('#mob-search-key');
+        if($(window).width() > 992) {
+            searchKeyWord = $('#des-search-key');
+        }
+        searchKeyWord.text(e);
+        // handle event when input change value
+        if (e.trim().length === 0) {
+            hideSearchTerm();
+        } else {
+            showSearchTerm();
+        }
     }
+
+    function showSearchTerm() {
+        let searchBox = $('#mob-dropdownWrapper .tab-search');
+        let trendingBox = $('#mob-dropdownWrapper .tab-trending');
+        if($(window).width() > 992) {
+            searchBox = $('#des-dropdownWrapper .tab-search');
+            trendingBox = $('#des-dropdownWrapper .tab-trending');
+        }
+        searchBox.addClass('show');
+        trendingBox.addClass('hide');
+    }
+
+    function hideSearchTerm() {
+        let searchBox = $('#mob-dropdownWrapper .tab-search');
+        let trendingBox = $('#mob-dropdownWrapper .tab-trending');
+        if($(window).width() > 992) {
+            searchBox = $('#des-dropdownWrapper .tab-search');
+            trendingBox = $('#des-dropdownWrapper .tab-trending');
+        }
+        searchBox.removeClass('show');
+        trendingBox.removeClass('hide');
+    }
+
 </script>

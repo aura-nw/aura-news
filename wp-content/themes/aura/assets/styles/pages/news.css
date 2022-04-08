@@ -84,9 +84,9 @@ section.news .post-box {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    min-height: 120px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    min-height: 50px;
     -webkit-box-orient: vertical;
 }
 .news-card.post-content:hover .post-item .post-title {
@@ -174,23 +174,29 @@ section.news .post-box {
     color: var(--aura-white);
 }
 
-.news-card .categories {
-	display: flex;
-    flex-wrap: wrap;
-}
-
-.news-card .categories .category {
-    display: flex;
+.aura-tag {
+    display: inline;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: fit-content;
-    height: 24px;
     border-radius: 6px;
     background: var(--aura-dark-gray);
     padding: 0.4rem 1.6rem;
     margin-right: 12px;
-    margin-bottom: 8px;
+    color: var(--aura-white);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+a.aura-tag:hover span {
+    background: var(--aura-gradient-simple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.news-card .aura-tag {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
 }
 
 @media (max-width: 992.99px) {
