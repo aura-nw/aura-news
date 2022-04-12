@@ -132,6 +132,7 @@ footer button:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
+    text-shadow: none !important;
 }
 .pum.pum-overlay.popmake-overlay.form_submission .pum-content.popmake-content {
     text-align: center;

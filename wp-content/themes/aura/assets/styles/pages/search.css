@@ -100,8 +100,24 @@
 
 .style_dropdownWrapper .aura-tag {
     margin-bottom: 12px;
+    display: inline-block;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
+#des-search-key {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#mob-search-key {
+    max-width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .navbar-collapse.header-search-mob {
     display: block !important;
 }

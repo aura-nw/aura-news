@@ -62,7 +62,7 @@ while (have_posts()) :
                 </div>
                 <?php
                     $tags = get_the_tags();
-                    if(count($tags) > 0) :
+                    if($tags && count($tags) > 0) :
                 ?>
                     <div class="tags">
                         <div class="title-small mb-4">Tags</div>

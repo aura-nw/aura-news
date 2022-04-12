@@ -8,14 +8,13 @@
     $table_name = "tds_search_tag_trending";
     $temp = $wpdb->get_results("INSERT INTO tds_search_tag_trending (key_word, count) VALUES('$textSearch', 0) ON DUPLICATE KEY UPDATE count = count + 1");
 ?>
-
 <section class="container search-container news">
     <?php
     if ( have_posts() ) : //
         ?>
         <div class="row">
             <h2 class="h2 d-flex justify-content-center">
-                We Found <?php echo $resultNumber . $resultString; ?> With "<?php echo get_query_var('s'); ?>"
+                We Found <?php echo $resultNumber . $resultString; ?> With "<span id="searchKey"><?php echo get_query_var('s'); ?></span>"
             </h2>
         </div>
         <div class="row news-card__list">
@@ -73,7 +72,7 @@
             <div class="col-12 text-center search--no-result">
                 <img src="<?php echo IMAGE_URL.'/backgrounds/404@2x.png'?>"
                      srcset="<?php echo IMAGE_URL.'/backgrounds/404@1x.png'?> 1x, <?php echo IMAGE_URL.'/backgrounds/404@2x.png'?> 2x" alt=""/>
-                <div class="body text--light-gray mt-5">We found <?php echo $resultNumber . $resultString; ?> with "<?php echo get_query_var('s'); ?>"</div>
+                <div class="body text--light-gray mt-5">We found <?php echo $resultNumber . $resultString; ?> with "<span id="searchKey"><?php echo get_query_var('s'); ?></span>"</div>
                 <div class="body text--light-gray">Please try searching with another keyword</div>
             </div>
         </div>
@@ -81,7 +80,6 @@
         endif;
     ?>
 </section>
-
 <?php
     get_footer();
 ?>

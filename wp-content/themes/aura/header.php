@@ -59,33 +59,21 @@ $catSlug = $_GET['category'];
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
-                                <div class="mt-3">
+                                <div class="mt-3 d-none" id="search-history-contain-mob">
                                     <div class="d-flex align-items-center text--white body-small fw-normal">
                                         <i class="icon aura-icon aura-icon-white-clock me-3"></i>
                                         <span>History search</span>
                                     </div>
-                                    <div class="d-flex flex-wrap mt-4">
-                                        <?php foreach($temp as $value): ?>
-                                            <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
-                                                <span>#<?= ucwords($value->key_word) ?></span>
-                                            </a>
-                                        <?php endforeach; ?>
-                                    </div>
+                                    <div class="d-flex flex-wrap mt-4" id="search-history-mob"></div>
                                 </div>
                             </div>
                             <div class="tab-search">
                                 <div class="tab-content">
-                                    <div class="d-flex align-items-center text--white body-small fw-normal">
+                                    <div class="d-flex align-items-center text--white body-small fw-normal overflow-hidden">
                                         <i class="icon aura-icon aura-icon-white-search me-3"></i>
                                         <span>Search &nbsp;</span> "<span id="mob-search-key"></span>"
                                     </div>
-                                    <div class="d-flex flex-wrap mt-4">
-                                        <?php foreach($temp as $value): ?>
-                                            <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
-                                                <span>#<?= ucwords($value->key_word) ?></span>
-                                            </a>
-                                        <?php endforeach; ?>
-                                    </div>
+                                    <div class="d-flex flex-wrap mt-4" id="searchKeyMob"></div>
                                 </div>
                             </div>
                         </div>
@@ -160,33 +148,21 @@ $catSlug = $_GET['category'];
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
-                                    <div class="mt-3">
+                                    <div class="mt-3 d-none" id="search-history-contain-des">
                                         <div class="d-flex align-items-center text--white body-small">
                                             <i class="icon aura-icon aura-icon-white-clock me-3"></i>
                                             <span>History search</span>
                                         </div>
-                                        <div class="d-flex flex-wrap mt-4">
-                                            <?php foreach($temp as $value): ?>
-                                                <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
-                                                    <span>#<?= ucwords($value->key_word) ?></span>
-                                                </a>
-                                            <?php endforeach; ?>
-                                        </div>
+                                        <div class="d-flex flex-wrap mt-4" id="search-history-des"></div>
                                     </div>
                                 </div>
                                 <div class="tab-search">
                                     <div class="tab-content">
-                                        <div class="d-flex align-items-center text--white body-small">
+                                        <div class="d-flex align-items-center text--white body-small overflow-hidden">
                                             <i class="icon aura-icon aura-icon-white-search me-3"></i>
                                             <span>Search &nbsp;</span>"<span id="des-search-key"></span>"
                                         </div>
-                                        <div class="d-flex flex-wrap mt-4">
-                                            <?php foreach($temp as $value): ?>
-                                                <a href="/?s=<?= ucwords($value->key_word) ?>&post_type=news" class="aura-tag">
-                                                    <span>#<?= ucwords($value->key_word) ?></span>
-                                                </a>
-                                            <?php endforeach; ?>
-                                        </div>
+                                        <div class="d-flex flex-wrap mt-4" id="searchKeyDes"></div>
                                     </div>
                                 </div>
                             </div>
@@ -203,6 +179,29 @@ $catSlug = $_GET['category'];
 </nav>
 <script type="application/javascript">
     $(document).ready(function(){
+        // create local storage for search history (if not existed)
+        let searchData = JSON.parse(localStorage.getItem('history_search'));
+        if(!searchData) {
+            const historyObj = [];
+            localStorage.setItem('history_search',JSON.stringify(historyObj));
+        } else {
+            // create search history area when have search cookie in memory
+            if (searchData.length > 1 || (searchData.length === 1 && searchData[0] !== '')) {
+                $('#search-history-contain-mob').removeClass('d-none');
+                $('#search-history-contain-des').removeClass('d-none');
+                searchData = searchData.slice(-10);
+                searchData.forEach(item => {
+                    let searchInnerHtml = "<a href='/?s="+ item +"&post_type=news' class='aura-tag'><span>#"+ item +"</span></a>"
+                    $('#search-history-contain-mob').append(searchInnerHtml);
+                    $('#search-history-contain-des').append(searchInnerHtml);
+                })
+            } else {
+                $('#search-history-contain-mob').addClass('d-none');
+                $('#search-history-contain-des').addClass('d-none');
+                $('#search-history-contain-mob').innerHTML = ``;
+                $('#search-history-contain-des').innerHTML = ``;
+            }
+        }
         // add support class for expanded navbar (full height of window)
         $('#headerMenuToggler').click(function () {
             if($('#headerMenuToggler').attr('aria-expanded') === 'true') {
@@ -234,7 +233,24 @@ $catSlug = $_GET['category'];
                     $('.style_wrapper').hide();
                 }
             });
-        });
+        // save search history every search form submit
+        $('#searchform').submit(function (event) {
+                const searchKeyword = $('#searchform .search-bar').val();
+                if(localStorage.getItem('history_search') && searchKeyword.trim().length > 0) {
+                    historyObj = JSON.parse(localStorage.getItem('history_search'));
+                    historyObj.push(searchKeyword);
+                    localStorage.setItem('history_search',JSON.stringify(historyObj));
+                }
+            })
+        $('#searchFormMob').submit(function (event) {
+                const searchKeyword = $('#searchform .search-bar').val();
+                if(localStorage.getItem('history_search') && searchKeyword.trim().length > 0) {
+                    historyObj = JSON.parse(localStorage.getItem('history_search'));
+                    historyObj.push(searchKeyword);
+                    localStorage.setItem('history_search',JSON.stringify(historyObj));
+                }
+            })
+    });
 
     function handleInput(e) {
         let searchKeyWord = $('#mob-search-key');
@@ -251,6 +267,8 @@ $catSlug = $_GET['category'];
     }
 
     function showSearchTerm() {
+        $('#searchKeyMob').empty();
+        $('#searchKeyDes').empty();
         let searchBox = $('#mob-dropdownWrapper .tab-search');
         let trendingBox = $('#mob-dropdownWrapper .tab-trending');
         if($(window).width() > 992) {
@@ -272,4 +290,64 @@ $catSlug = $_GET['category'];
         trendingBox.removeClass('hide');
     }
 
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+
+    //setup before functions
+    var typingTimer;                //timer identifier
+    var doneTypingInterval = 1000;  //time in ms, 5 seconds for example
+    var $inputMob = $('#searchFormMob .search-bar');
+    var $inputDes = $('#searchform .search-bar');
+
+    //on keyup, start the countdown
+    $inputMob.on('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(searchAutoComplete, doneTypingInterval);
+    });
+    $inputDes.on('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(searchAutoComplete, doneTypingInterval);
+    });
+
+    //on keydown, clear the countdown
+    $inputMob.on('keydown', function () {
+        clearTimeout(typingTimer);
+    });
+    $inputDes.on('keydown', function () {
+        clearTimeout(typingTimer);
+    });
+
+    function searchAutoComplete() {
+        // show trending data by ajax
+        let searchKeyWord = $('#searchFormMob .search-bar').val();
+        if($(window).width() > 992) {
+            searchKeyWord = $('#searchform .search-bar').val();
+        }
+        $.ajax({
+            type: "GET", //Phương thức truyền post hoặc get
+            dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
+            url : '<?php echo esc_js( admin_url( 'admin-ajax.php', 'relative' ) ); ?>', //Đường dẫn chứa hàm xử lý dữ liệu. Mặc định của WP như vậy
+            data : {
+                action: "my_action", //Tên action
+                keywords: searchKeyWord
+            },
+            success:function(data){
+                if(data && data.length > 0) {
+                    data = data.slice(-10);
+                    data.forEach(item => {
+                        let searchInnerHtml = "<a href='/?s="+ item.key_word +"&post_type=news' class='aura-tag'><span>#"+ item.key_word +"</span></a>"
+                        $('#searchKeyMob').append(searchInnerHtml);
+                        $('#searchKeyDes').append(searchInnerHtml);
+                    })
+                }
+            },
+            error: function(errorThrown){
+                console.log(errorThrown)
+            }
+        })
+    }
 </script>

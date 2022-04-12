@@ -1,4 +1,7 @@
 <?php
+
+use JetBrains\PhpStorm\NoReturn;
+
 function myscripts() {
     // lib css
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/styles/bootstrap.min.css', array());
@@ -136,4 +139,18 @@ function my_search_is_exact($search, $wp_query){
             $search .= " AND ($wpdb->posts.post_password = '') ";
     endif;
     return $search;
+}
+
+
+
+// get data from table trending
+add_action( 'wp_ajax_my_action', 'my_action' );
+add_action( 'wp_ajax_nopriv_my_action', 'my_action' );
+function my_action() {
+    //do bên js để dạng json nên giá trị trả về dùng phải encode
+    $keywords = isset($_GET['keywords']) ? esc_attr($_GET['keywords']) : '';
+    global $wpdb;
+    $keywordsMatches =  $wpdb->get_results("SELECT key_word FROM tds_search_tag_trending WHERE key_word LIKE '%$keywords%'");
+    echo json_encode($keywordsMatches);
+    die(); //bắt buộc phải có khi kết thúc
 }
