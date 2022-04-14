@@ -59,6 +59,11 @@
     </section>
 </footer>
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -38,12 +38,13 @@ $catSlug = $_GET['category'];
             <div class="collapse navbar-collapse" id="headerSearchMenu">
                 <div class="search-group">
                     <form class="search-bar-form" method="get" id="searchFormMob" action="<?php bloginfo('home'); ?>/">
-                        <input class="search-bar" type="text" name="s" placeholder="Search..." autocomplete="off" onkeyup="handleInput(this.value)"/>
+                        <input class="search-bar" type="text" name="s" placeholder="Search..." maxlength="200"
+                               autocomplete="off" onkeyup="handleInput(this.value)"/>
                         <input type="hidden" name="post_type" value="news" />
                         <button type="reset" class="btn-reset" onclick="handleInput('')"></button>
                         <button type="submit" class="btn-submit"></button>
                     </form>
-                    <div class="style_wrapper style_start d-block">
+                    <div class="style_wrapper style_start d-none bg-black" id="mob-style-wrapper">
                         <div class="style_dropdownWrapper" id="mob-dropdownWrapper">
                             <div class="tab-trending">
                                 <div>
@@ -124,10 +125,11 @@ $catSlug = $_GET['category'];
             </div>
             <div class="flex-shrink-0 mt-5 mt-lg-0">
                 <div class="d-flex">
-                    <div class="search-group d-none d-sm-block" id="clickBox">
+                    <div class="search-group d-none d-lg-block" id="clickBox">
                         <form class="search-bar-form text-start text-lg-end"
                               method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-                            <input class="search-bar" type="text" name="s" placeholder="Search..." autocomplete="off" onkeyup="handleInput(this.value)"/>
+                            <input class="search-bar" type="text" name="s" placeholder="Search..."  maxlength="200"
+                                   autocomplete="off" onkeyup="handleInput(this.value)"/>
                             <input type="hidden" name="post_type" value="news" />
                             <button type="reset" class="btn-reset" onclick="handleInput('')"></button>
                             <button type="submit" class="btn-submit"></button>
@@ -179,12 +181,13 @@ $catSlug = $_GET['category'];
 </nav>
 <script type="application/javascript">
     $(document).ready(function(){
-        // create local storage for search history (if not existed)
-        let searchData = JSON.parse(localStorage.getItem('history_search'));
+        // create cookie for search history (if not existed)
+        let searchData = getCookie('history_search');
         if(!searchData) {
             const historyObj = [];
-            localStorage.setItem('history_search',JSON.stringify(historyObj));
+            document.cookie = "history_search=" + JSON.stringify(historyObj);
         } else {
+            searchData = JSON.parse(searchData);
             // create search history area when have search cookie in memory
             if (searchData.length > 1 || (searchData.length === 1 && searchData[0] !== '')) {
                 $('#search-history-contain-mob').removeClass('d-none');
@@ -217,12 +220,19 @@ $catSlug = $_GET['category'];
                 $('.style_dropdownWrapper').show();
                 $('#headerMenuNavbar').addClass('expanded');
                 $('#headerMenuToggler').addClass('d-none');
+                setTimeout(function() {
+                    $('#mob-style-wrapper').removeClass('d-none');
+                    $('#mob-style-wrapper').addClass('d-block');
+                }, 200);
             } else {
                 $('.style_dropdownWrapper').hide();
                 $('#headerMenuNavbar').removeClass('expanded');
                 $('#headerMenuToggler').removeClass('d-none');
+                $('#mob-style-wrapper').removeClass('d-block');
+                $('#mob-style-wrapper').addClass('d-none');
             }
         });
+
         // show popup when click into search box
         $('#searchform').click(function () {
             $('.style_wrapper').show();
@@ -236,18 +246,18 @@ $catSlug = $_GET['category'];
         // save search history every search form submit
         $('#searchform').submit(function (event) {
                 const searchKeyword = $('#searchform .search-bar').val();
-                if(localStorage.getItem('history_search') && searchKeyword.trim().length > 0) {
-                    historyObj = JSON.parse(localStorage.getItem('history_search'));
+                if(getCookie('history_search') && searchKeyword.trim().length > 0) {
+                    historyObj = JSON.parse(getCookie('history_search'));
                     historyObj.push(searchKeyword);
-                    localStorage.setItem('history_search',JSON.stringify(historyObj));
+                    document.cookie = "history_search=" + JSON.stringify(historyObj);
                 }
             })
         $('#searchFormMob').submit(function (event) {
-                const searchKeyword = $('#searchform .search-bar').val();
-                if(localStorage.getItem('history_search') && searchKeyword.trim().length > 0) {
-                    historyObj = JSON.parse(localStorage.getItem('history_search'));
+                const searchKeyword = $('#searchFormMob .search-bar').val();
+                if(getCookie('history_search') && searchKeyword.trim().length > 0) {
+                    historyObj = JSON.parse(getCookie('history_search'));
                     historyObj.push(searchKeyword);
-                    localStorage.setItem('history_search',JSON.stringify(historyObj));
+                    document.cookie = "history_search=" + JSON.stringify(historyObj);
                 }
             })
     });
@@ -343,6 +353,10 @@ $catSlug = $_GET['category'];
                         $('#searchKeyMob').append(searchInnerHtml);
                         $('#searchKeyDes').append(searchInnerHtml);
                     })
+                } else {
+                    // No information found in the system
+                    $('#searchKeyMob').append(`<div class="body-small">No information found in the system</div>`);
+                    $('#searchKeyDes').append(`<div class="body-small">No information found in the system</div>`);
                 }
             },
             error: function(errorThrown){

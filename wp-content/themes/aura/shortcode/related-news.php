@@ -29,7 +29,7 @@ function createRelatedNews($attr)
             <div class="post-item">
                 <a href="' . get_the_permalink($post_id) . '" class="d-flex d-lg-block">
                     <img class="item-thumbnail" src="' . wp_get_attachment_url(get_post_thumbnail_id($post_id)) . '" alt="' . get_the_title($post_id) . '" width="100%">
-                    <div class="item-title text--white body body-small-mob d-flex align-items-center">' . get_the_title($post_id) . '</div>
+                    <div class="item-title text--white body body-small-mob my-auto my-lg-2">' . get_the_title($post_id) . '</div>
                 </a>
             </div>
             ';

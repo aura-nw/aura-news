@@ -70,7 +70,7 @@ while (have_posts()) :
                             foreach ( $tags as $tag ) {
                                 $tag_link = get_tag_link( $tag->term_id );
                                 ?>
-                                    <a href="<?php echo $tag_link; ?>" class="aura-tag"><span>#<?php echo $tag->name; ?></span></a>
+                                    <a href="<?php echo $tag_link; ?>" class="aura-tag mb-3"><span>#<?php echo $tag->name; ?></span></a>
                                 <?php
                             }
                         ?>

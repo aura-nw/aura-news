@@ -113,7 +113,7 @@
     text-overflow: ellipsis;
 }
 #mob-search-key {
-    max-width: 50%;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

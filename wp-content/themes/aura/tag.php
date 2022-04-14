@@ -39,14 +39,8 @@ $thePostArr = query_posts($postArgs);
                                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post_title ?>" class="post-img">
                                     </a>
                                 </div>
-                                <div class="post-info-contain">
-                                    <div class="heading d-flex align-items-center mt-4">
-                                        <div class="author-avatar ms-0">
-                                            <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
-                                        </div>
-                                        <div class="author-name body fw-bold"><?php echo get_the_author() ?></div>
-                                    </div>
-                                    <a href="<?php echo $post_link ?>" class="sub-text mt-4 fw-bold post-title"><?php echo $post_title ?></a>
+                                <div class="post-info-contain mt-4 ">
+                                    <a href="<?php echo $post_link ?>" class="title-small fw-bold post-title"><?php echo $post_title ?></a>
                                     <div class="item-post-time my-4">
                                         <div class="d-flex flex-wrap">
                                             <?php
