@@ -24,7 +24,7 @@
                                 foreach ($footer_menu_cats as $cat) {
                                     $category = get_term_by('slug', $cat, 'category');
                                     ?>
-                                    <div class="mb-4"><a target="_blank" href="announcement/?category=<?php echo $category->slug ?>"><?php echo $category->name; ?></a></div>
+                                    <div class="mb-4"><a target="_blank" href="/announcement/?category=<?php echo $category->slug ?>"><?php echo $category->name; ?></a></div>
                                     <?php
                                 }
                                 ?>

@@ -3,6 +3,7 @@
   src: url('SFPRODISPLAYREGULAR.otf');
   font-style: normal;
   font-weight: 400;
+  font-display: block;
 }
 @font-face {
   font-family: SFProDisplay;

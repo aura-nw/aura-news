@@ -89,7 +89,7 @@
     border: none;
     width: 20px;
     height: 20px;
-    background: url("../../images/icons/basic/chevron-down.png") center no-repeat;
+    background: url("../../images/icons/white/chevron-down.svg") center no-repeat;
     background-size: contain;
     margin-left: 8px;
     transition: background 0.45s ease-in-out;
@@ -101,7 +101,10 @@
     background: url("../../images/icons/white/chevron-up.png") center no-repeat;
     background-size: contain;
 }
-.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item .nav-link.show {
+/*.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item .nav-link.show {*/
+/*    color: var(--aura-white);*/
+/*}*/
+.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item .nav-link {
     color: var(--aura-white);
 }
 .navbar .nav-menu .nav-item .nav-link:first-child {
@@ -218,7 +221,4 @@
 }
 .navbar .social-group .elementor-container.elementor-column-gap-default {
     justify-content: center;
-}
-.bg-black {
-    background: var(--aura-black) !important;
 }

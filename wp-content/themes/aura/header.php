@@ -6,8 +6,6 @@
      <meta name="viewport" content="width=device-width,initial-scale=1">
 	<link type="image/x-icon" rel="shortcut icon" href="<?php echo IMAGE_URL; ?>/favicon.png">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,greek,vietnamese' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=vietnamese" rel="stylesheet">
 	<?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
@@ -44,7 +42,7 @@ $catSlug = $_GET['category'];
                         <button type="reset" class="btn-reset" onclick="handleInput('')"></button>
                         <button type="submit" class="btn-submit"></button>
                     </form>
-                    <div class="style_wrapper style_start d-none bg-black" id="mob-style-wrapper">
+                    <div class="style_wrapper style_start d-none" id="mob-style-wrapper">
                         <div class="style_dropdownWrapper" id="mob-dropdownWrapper">
                             <div class="tab-trending">
                                 <div>
@@ -96,7 +94,7 @@ $catSlug = $_GET['category'];
                         <div class="divider divider-vertical"></div>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
-                        <a class="nav-link ps-0 <?php if(!isset($catSlug)) echo 'show'; ?>" href="/">HOME</a>
+                        <a class="nav-link ps-0" href="/">HOME</a>
                     </li>
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
                         <div class="dropdown">
@@ -236,6 +234,9 @@ $catSlug = $_GET['category'];
         // show popup when click into search box
         $('#searchform').click(function () {
             $('.style_wrapper').show();
+            if ($(window).width() > 992) {
+                $('#des-dropdownWrapper').show();
+            }
         });
         // hide popup when click out search box
         window.addEventListener('mousedown', function(e){

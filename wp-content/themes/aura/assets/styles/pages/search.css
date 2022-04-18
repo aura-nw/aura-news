@@ -179,8 +179,15 @@
     }
 
     #searchform {
-        min-width: 327px;
+        width: 225px;
     }
+}
+
+@media (min-width: 1200px) {
+    #searchform {
+        width: 327px;
+    }
+
 }
 
 @media (max-width: 600px) {
