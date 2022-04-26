@@ -1,54 +1,19 @@
 <?php
 /**
- * Template Name: Aura news
+ * Template Name: Aura news (All Post)
  * Template Post Type: page
  */
 get_header();
 global $wp;
 $args = null;
-// get all news category
-$argsCats = array(
-    'hide_empty' => 0,
-    'pad_counts' => true,
-    'taxonomy'=> 'category',
-    'type' => 'news'
+$args = array(
+    'posts_per_page' => 6,
+    'post_type' => 'news',
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'post_status' => 'publish',
+    'suppress_filters' => false,
 );
-$categoryArr = get_categories($argsCats);
-// get first category -> default category in the first time
-$home_page_cats =  get_option('home_page_cats');
-$firstCategory = get_term_by( 'slug', get_option('home_page_cats')[0], 'category' );
-// if have category in URL -> get all news belong to that category
-if (isset($_GET['category'])) {
-    $args = array(
-            'post_type' => 'news',
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_status' => 'publish',
-            'suppress_filters' => false,
-            'tax_query' => array(
-                    array(
-                            'taxonomy' => 'category',
-                            'field' => 'slug',
-                            'terms' => $_GET['category']
-                    )
-            )
-    );
-} else {
-    $args = array(
-        'post_type' => 'news',
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_status' => 'publish',
-        'suppress_filters' => false,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'category',
-                'field' => 'slug',
-                'terms' => $firstCategory->slug
-            )
-        )
-    );
-}
 // function action get all post
 $thePostArr = query_posts($args);
 ?>
@@ -58,32 +23,6 @@ $thePostArr = query_posts($args);
         <img src="<?php echo get_field('mobile_image'); ?>" alt="Banner Mobile" class="d-lg-none">
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="d-flex flex-wrap justify-content-center">
-                    <?php
-                    // get categories activated
-                    foreach ($home_page_cats as $key => $cat) {
-                        $category = get_term_by('slug', $cat, 'category');
-                        ?>
-                        <div class="tab-content">
-                            <a href="/?category=<?php echo $category->slug ?>"
-                               class="h4 text-decoration-none
-                               <?php
-                               if(!isset($_GET['category']) && $key == 0) {
-                                   echo 'active';
-                               } else if ($_GET['category'] == $category->slug) {
-                                   echo 'active';
-                               }
-                               ?>"><?php echo $category->name; ?>
-                            </a>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
         <div class="row post-box news-card__list">
             <?php
             // loop all post (news) -> print post

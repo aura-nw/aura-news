@@ -15,21 +15,7 @@
                         <div class="col-6 col-md-3">
                             <a href="/" class="body contact__title">Home</a>
                         </div>
-                        <div class="col-6 col-md-3">
-                            <a href="/announcement/" target="_blank" class="body contact__title">Annoucement</a>
-                            <div class="body mt-2 mt-md-5">
-                                <?php
-                                // get categories activated
-                                $footer_menu_cats =  get_option('footer_menu_cats');
-                                foreach ($footer_menu_cats as $cat) {
-                                    $category = get_term_by('slug', $cat, 'category');
-                                    ?>
-                                    <div class="mb-4"><a target="_blank" href="/announcement/?category=<?php echo $category->slug ?>"><?php echo $category->name; ?></a></div>
-                                    <?php
-                                }
-                                ?>
-                            </div>
-                        </div>
+                        <?php echo footer_custom_main_menu(); ?>
                     </div>
             </div>
             <div class="col-12 col-lg-3 footer__cta flex-xl-shrink-0 flex-xl-grow-1">

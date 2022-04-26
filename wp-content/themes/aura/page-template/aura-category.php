@@ -80,7 +80,7 @@ $thePostArr = query_posts($args);
                                             </div>
                                         </div>
                                         <div class="body item-post-txt"><?php echo get_the_excerpt() ?></div>
-                                        <div><a href="<?php echo $post_link ?>" class="body text--green">See more</a></div>
+                                        <div><a href="<?php echo $post_link ?>" class="body text--green">Read more</a></div>
                                     </div>
                                 </div>
                             </div>

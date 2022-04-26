@@ -89,27 +89,27 @@ function remove_unit_tag($url){
  * Add theme setting
  */
 //add new menu for theme-options page with page callback theme-options-page.
-function add_custom_theme_page() {
-    add_theme_page( 'Theme Title Settings', 'Theme Menu Settings', 'edit_theme_options', 'test-theme-options', 'theme_option_page' );
-}
-add_action( 'admin_menu', 'add_custom_theme_page' );
-function theme_option_page() {
-    ?>
-    <div class="wrap">
-        <h1>Theme Options Page</h1>
-        <form method="post" action="options.php">
-            <?php
-            // display settings field on theme-option page
-            settings_fields("theme-options-grp");
-
-            // display all sections for theme-options page
-            do_settings_sections("theme-options");
-            submit_button();
-            ?>
-        </form>
-    </div>
-    <?php
-}
+//function add_custom_theme_page() {
+//    add_theme_page( 'Theme Title Settings', 'Theme Menu Settings', 'edit_theme_options', 'test-theme-options', 'theme_option_page' );
+//}
+//add_action( 'admin_menu', 'add_custom_theme_page' );
+//function theme_option_page() {
+//    ?>
+<!--    <div class="wrap">-->
+<!--        <h1>Theme Options Page</h1>-->
+<!--        <form method="post" action="options.php">-->
+<!--            --><?php
+//            // display settings field on theme-option page
+//            settings_fields("theme-options-grp");
+//
+//            // display all sections for theme-options page
+//            do_settings_sections("theme-options");
+//            submit_button();
+//            ?>
+<!--        </form>-->
+<!--    </div>-->
+<!--    --><?php
+//}
 
 // skip sending cf7 email
 add_filter( 'wpcf7_skip_mail', 'mycustom_wpcf7_skip_mail', 10, 2 );
@@ -128,4 +128,132 @@ function my_action() {
     $keywordsMatches =  $wpdb->get_results("SELECT key_word FROM tds_search_tag_trending WHERE key_word LIKE '%$keywords%'");
     echo json_encode($keywordsMatches);
     die(); //bắt buộc phải có khi kết thúc
+}
+
+function header_custom_main_menu() {
+    $menu_name = 'Main Menu'; // specify custom menu slug
+    $menu_list = '';
+
+    if ($menu_items = wp_get_nav_menu_items($menu_name)) {
+        $count = 0;
+        $submenu = false;
+        $parent_id = 0;
+        $previous_item_has_submenu = false;
+
+        foreach ((array) $menu_items as $key => $menu_item) {
+            $title = $menu_item->title;
+            $url = $menu_item->url;
+
+            // check if it's a top-level item
+            if ($menu_item->menu_item_parent == 0) {
+                $parent_id = $menu_item->ID;
+                // write the item but DON'T close the A or LI until we know if it has children!
+                $menu_list .= "\t". '<li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8">
+                                        <div class="dropdown">
+                                            <button class="nav-link dropdown-toggle ps-0" type="button" id="dropdownMenuResources-'.$menu_item->ID.'" data-bs-toggle="dropdown">'. $title . '</button>';
+            }
+
+            // if this item has a (nonzero) parent ID, it's a second-level (child) item
+            else {
+                if ( !$submenu ) { // first item
+                    // start the child list
+                    $submenu = true;
+                    $previous_item_has_submenu = true;
+                    $menu_list .= '<ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources-'.$menu_item->ID.'">';
+                }
+
+                $menu_list .= '<li>';
+                $menu_list .= '<a href="'.$url.'" class="dropdown-item h4" target="_blank">'.$title.'</a>';
+                $menu_list .= '</li>' ."\n";
+
+                // if it's the last child, close the submenu code
+                if ( $menu_items[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ){
+                    $menu_list .= "\t\t" . '</ul></div></li>' ."\n";
+                    $submenu = false;
+                }
+            }
+
+            // close the parent (top-level) item
+            if (empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id )
+            {
+                if ($previous_item_has_submenu)
+                {
+                    // the a link and list item were already closed
+                    $previous_item_has_submenu = false; //reset
+                }
+                else {
+                    // close a link and list item
+                    $menu_list .= "\t" . '</div></li>' . "\n";
+                }
+            }
+
+            $count++;
+        }
+    } else {
+        $menu_list .= '<!-- no list defined -->';
+    }
+    echo $menu_list;
+}
+function footer_custom_main_menu() {
+    $menu_name = 'Main Menu'; // specify custom menu slug
+    $menu_list = '';
+
+    if ($menu_items = wp_get_nav_menu_items($menu_name)) {
+        $count = 0;
+        $submenu = false;
+        $parent_id = 0;
+        $previous_item_has_submenu = false;
+
+        foreach ((array) $menu_items as $key => $menu_item) {
+            $title = $menu_item->title;
+            $url = $menu_item->url;
+
+            // check if it's a top-level item
+            if ($menu_item->menu_item_parent == 0) {
+                $parent_id = $menu_item->ID;
+                // write the item but DON'T close the A or LI until we know if it has children!
+                $menu_list .= "\t". '<div class="col-6 col-md-4">
+                                        <a href="'. $url .'" target="_blank" class="body contact__title">'. $title . '</a>';
+            }
+
+            // if this item has a (nonzero) parent ID, it's a second-level (child) item
+            else {
+                if ( !$submenu ) { // first item
+                    // start the child list
+                    $submenu = true;
+                    $previous_item_has_submenu = true;
+                    $menu_list .= '<div class="body mt-2 mt-md-5">';
+                }
+
+                $menu_list .= '<div class="mb-4">';
+                $menu_list .= '<a target="_blank" href="'.$url.'">'.$title.'</a>';
+                $menu_list .= '</div>' ."\n";
+
+                // if it's the last child, close the submenu code
+                if ( $menu_items[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ){
+                    $menu_list .= "</div></div>";
+                    $submenu = false;
+                }
+            }
+
+            // close the parent (top-level) item
+            if (empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id )
+            {
+                if ($previous_item_has_submenu)
+                {
+                    // the a link and list item were already closed
+                    $previous_item_has_submenu = false; //reset
+                }
+                else {
+                    // close a link and list item
+                    $menu_list .= "\t" . '</a></div>' . "\n";
+                }
+            }
+
+            $count++;
+        }
+    } else {
+        $menu_list .= '<!-- no list defined -->';
+    }
+    echo $menu_list;
 }

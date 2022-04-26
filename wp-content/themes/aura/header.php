@@ -3,10 +3,10 @@
 <head>
     <title><?php wp_title('');?></title>
     <!-- meta name allow design css when screen change -->
-     <meta name="viewport" content="width=device-width,initial-scale=1">
-	<link type="image/x-icon" rel="shortcut icon" href="<?php echo IMAGE_URL; ?>/favicon.png">
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<?php wp_head();?>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link type="image/x-icon" rel="shortcut icon" href="<?php echo IMAGE_URL; ?>/favicon.png">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
 <?php
@@ -93,32 +93,13 @@ $catSlug = $_GET['category'];
                     <li class="nav-item mx-4 mx-lg-12 d-none d-lg-block">
                         <div class="divider divider-vertical"></div>
                     </li>
+
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
                         <a class="nav-link ps-0" href="/">HOME</a>
                     </li>
-                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 my-lg-0 mr-md-8">
-                        <div class="dropdown">
-                            <button class="nav-link dropdown-toggle ps-0" type="button" id="dropdownMenuResources" data-bs-toggle="dropdown">
-                                ANNOUNCEMENT
-                            </button>
-                            <ul class="dropdown-menu body sub-text-mob" aria-labelledby="dropdownMenuResources">
-                                <?php
-                                // get categories activated
-                                $header_menu_cats =  get_option('header_menu_cats');
-                                foreach ($header_menu_cats as $cat) {
-                                    $category = get_term_by('slug', $cat, 'category');
-                                    ?>
-                                    <li>
-                                        <a href="announcement/?category=<?php echo $category->slug ?>"
-                                           class="dropdown-item h4" target="_blank"><?php echo $category->name; ?>
-                                        </a>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                    </li>
+                    <?php
+                        echo header_custom_main_menu();
+                    ?>
                 </ul>
             </div>
             <div class="flex-shrink-0 mt-5 mt-lg-0">
@@ -241,26 +222,26 @@ $catSlug = $_GET['category'];
         // hide popup when click out search box
         window.addEventListener('mousedown', function(e){
             if (!document.getElementById('clickBox').contains(e.target)){
-                    $('.style_wrapper').hide();
-                }
-            });
+                $('.style_wrapper').hide();
+            }
+        });
         // save search history every search form submit
         $('#searchform').submit(function (event) {
-                const searchKeyword = $('#searchform .search-bar').val();
-                if(getCookie('history_search') && searchKeyword.trim().length > 0) {
-                    historyObj = JSON.parse(getCookie('history_search'));
-                    historyObj.push(searchKeyword);
-                    document.cookie = "history_search=" + JSON.stringify(historyObj);
-                }
-            })
+            const searchKeyword = $('#searchform .search-bar').val();
+            if(getCookie('history_search') && searchKeyword.trim().length > 0) {
+                historyObj = JSON.parse(getCookie('history_search'));
+                historyObj.push(searchKeyword);
+                document.cookie = "history_search=" + JSON.stringify(historyObj);
+            }
+        })
         $('#searchFormMob').submit(function (event) {
-                const searchKeyword = $('#searchFormMob .search-bar').val();
-                if(getCookie('history_search') && searchKeyword.trim().length > 0) {
-                    historyObj = JSON.parse(getCookie('history_search'));
-                    historyObj.push(searchKeyword);
-                    document.cookie = "history_search=" + JSON.stringify(historyObj);
-                }
-            })
+            const searchKeyword = $('#searchFormMob .search-bar').val();
+            if(getCookie('history_search') && searchKeyword.trim().length > 0) {
+                historyObj = JSON.parse(getCookie('history_search'));
+                historyObj.push(searchKeyword);
+                document.cookie = "history_search=" + JSON.stringify(historyObj);
+            }
+        })
     });
 
     function handleInput(e) {
@@ -338,6 +319,9 @@ $catSlug = $_GET['category'];
         if($(window).width() > 992) {
             searchKeyWord = $('#searchform .search-bar').val();
         }
+        // clear tags
+        $('#searchKeyMob').empty();
+        $('#searchKeyDes').empty();
         $.ajax({
             type: "GET", //Phương thức truyền post hoặc get
             dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
@@ -348,11 +332,16 @@ $catSlug = $_GET['category'];
             },
             success:function(data){
                 if(data && data.length > 0) {
+                    $('#searchKeyMob').empty();
+                    $('#searchKeyDes').empty();
                     data = data.slice(-10);
                     data.forEach(item => {
                         let searchInnerHtml = "<a href='/?s="+ item.key_word +"&post_type=news' class='aura-tag'><span>#"+ item.key_word +"</span></a>"
-                        $('#searchKeyMob').append(searchInnerHtml);
-                        $('#searchKeyDes').append(searchInnerHtml);
+                        if ($(window).width() > 992) {
+                            $('#searchKeyDes').append(searchInnerHtml);
+                        } else {
+                            $('#searchKeyMob').append(searchInnerHtml);
+                        }
                     })
                 } else {
                     // No information found in the system
