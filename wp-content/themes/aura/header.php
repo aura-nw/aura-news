@@ -97,6 +97,11 @@ $catSlug = $_GET['category'];
                     <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
                         <a class="nav-link ps-0" href="/">HOME</a>
                     </li>
+
+                    <li class="nav-item mx-lg-4 mx-xl-5 h4 h3-mob mb-5 mb-lg-0 mr-md-8 dropdown">
+                        <a class="nav-link ps-0" href="/announcement/?category=news">NEWS</a>
+                    </li>
+
                     <?php
                         echo header_custom_main_menu();
                     ?>

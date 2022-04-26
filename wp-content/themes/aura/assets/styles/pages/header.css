@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 10000;
     background-color: var(--aura-black);
     transition: all .35s ease-in-out;
 }
@@ -84,6 +84,7 @@
     padding-top: 0;
     padding-bottom: 0;
     position: relative;
+    text-transform: uppercase;
 }
 .navbar .nav-menu .nav-item .nav-link:after {
     border: none;
@@ -96,6 +97,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-35%);
+}
+.navbar .nav-menu .nav-item:nth-child(4) .nav-link:after {
+    display: none;
 }
 .navbar .nav-menu .nav-item .nav-link.show:after {
     background: url("../../images/icons/white/chevron-up.png") center no-repeat;
@@ -131,6 +135,7 @@
     text-align: left;
 }
 .navbar .nav-menu .nav-item .dropdown-menu .dropdown-item {
+    text-transform: uppercase;
     padding: 8px 0;
     color: var(--aura-white);
     transition: background-color 0.35s ease-in-out;

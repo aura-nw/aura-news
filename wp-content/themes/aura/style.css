@@ -6,6 +6,7 @@ Version: 1.0
 tags:
 Textdomain: aura
  */
+@import "assets/fonts/BigShouldersDisplay/BigShouldersDisplay.css";
 @import "assets/fonts/Redig/Redig.css";
 @import "assets/fonts/SfProDisplay/SfProDisplay.css";
 @import "assets/styles/_variables.css";

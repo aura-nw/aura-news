@@ -15,6 +15,11 @@
                         <div class="col-6 col-md-3">
                             <a href="/" class="body contact__title">Home</a>
                         </div>
+
+                        <div class="col-6 col-md-3">
+                            <a class="nav-link ps-0" href="/announcement/?category=news">News</a>
+                        </div>
+
                         <?php echo footer_custom_main_menu(); ?>
                     </div>
             </div>

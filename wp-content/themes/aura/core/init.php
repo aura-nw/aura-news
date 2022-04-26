@@ -212,7 +212,7 @@ function footer_custom_main_menu() {
             if ($menu_item->menu_item_parent == 0) {
                 $parent_id = $menu_item->ID;
                 // write the item but DON'T close the A or LI until we know if it has children!
-                $menu_list .= "\t". '<div class="col-6 col-md-4">
+                $menu_list .= "\t". '<div class="col-6 col-md-3">
                                         <a href="'. $url .'" target="_blank" class="body contact__title">'. $title . '</a>';
             }
 
