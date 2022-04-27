@@ -21,6 +21,10 @@ $thePostArr = query_posts($args);
     <div class="banner-hero">
         <img src="<?php echo get_field('desktop_image'); ?>" alt="Banner desktop" class="d-none d-lg-block">
         <img src="<?php echo get_field('mobile_image'); ?>" alt="Banner Mobile" class="d-lg-none">
+        <div class="banner-hero__content">
+            <?php if(get_field('title') !== null || strlen(get_field('title')) > 0) echo '<h1 class="text-gradient h3-mob d-block">'.get_field('title').'</h1>' ?>
+            <?php if(get_field('sub_title') !== null || strlen(get_field('sub_title')) > 0) echo '<h2 class="title body-small-mob text--light-gray d-block mb-0">'.get_field('sub_title').'</h2>' ?>
+        </div>
     </div>
     <div class="container">
         <div class="row post-box news-card__list">

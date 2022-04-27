@@ -99,38 +99,38 @@ h4, .h4 {
 .text--neutrals-8 {
     color: var(--aura-neutrals-8) !important;
 }
+.text-gradient {
+    background: var(--aura-gradient-simple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /* Typo for ck-editor content */
 .news-details .content.body h1, .insight-h1 {
     font-family: BigShouldersDisplay !important;
-    font-size: 6.4rem !important;
-    line-height: 7.2rem !important;
-}
-.news-details .content.body h2, .insight-h2 {
-    font-family: BigShouldersDisplay !important;
     font-size: 5.2rem !important;
     line-height: 6.4rem !important;
 }
-.news-details .content.body h3, .insight-h3 {
-    font-family: BigShouldersDisplay !important;
-    font-size: 3.2rem !important;
-    line-height: 4rem !important;
-}
-.news-details .content.body h4, .insight-h4 {
+.news-details .content.body h2, .insight-h2 {
     font-size: 2.4rem !important;
     line-height: 3.2rem !important;
 }
-.news-details .content.body h5 {
+.news-details .content.body h3, .insight-h3 {
     font-size: 2rem !important;
     line-height: unset !important;
 }
-.news-details .content.body h6 {
-    font-size: 1.4rem !important;
-    line-height: unset !important;
-}
+.news-details .content.body h4, .insight-h4,
 .news-details .content.body p {
     font-size: 1.6rem !important;
     line-height: 2.4rem !important;
+}
+.news-details .content.body h5 {
+    font-size: 1.4rem !important;
+    line-height: unset !important;
+}
+.news-details .content.body h6 {
+    font-size: 1.2rem !important;
+    line-height: unset !important;
 }
 
 
@@ -192,17 +192,15 @@ h4, .h4 {
     }
     .insight-h1-mob {
         font-family: BigShouldersDisplay !important;
-        font-size: 6.4rem !important;
-        line-height: 7.2rem !important;
-    }
-    .insight-h2-mob {
-        font-family: BigShouldersDisplay !important;
         font-size: 5.2rem !important;
         line-height: 6.4rem !important;
     }
+    .insight-h2-mob {
+        font-size: 2.4rem !important;
+        line-height: 3.2rem !important;
+    }
     .insight-h3-mob {
-        font-family: BigShouldersDisplay !important;
-        font-size: 3.2rem !important;
-        line-height: 4rem !important;
+        font-size: 2rem !important;
+        line-height: unset !important;
     }
 }

@@ -85,31 +85,6 @@ function remove_unit_tag($url){
     $new_url = $remove_unit_tag[0];
     return $new_url;
 }
-/*
- * Add theme setting
- */
-//add new menu for theme-options page with page callback theme-options-page.
-//function add_custom_theme_page() {
-//    add_theme_page( 'Theme Title Settings', 'Theme Menu Settings', 'edit_theme_options', 'test-theme-options', 'theme_option_page' );
-//}
-//add_action( 'admin_menu', 'add_custom_theme_page' );
-//function theme_option_page() {
-//    ?>
-<!--    <div class="wrap">-->
-<!--        <h1>Theme Options Page</h1>-->
-<!--        <form method="post" action="options.php">-->
-<!--            --><?php
-//            // display settings field on theme-option page
-//            settings_fields("theme-options-grp");
-//
-//            // display all sections for theme-options page
-//            do_settings_sections("theme-options");
-//            submit_button();
-//            ?>
-<!--        </form>-->
-<!--    </div>-->
-<!--    --><?php
-//}
 
 // skip sending cf7 email
 add_filter( 'wpcf7_skip_mail', 'mycustom_wpcf7_skip_mail', 10, 2 );

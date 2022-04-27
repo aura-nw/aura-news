@@ -10,6 +10,24 @@ section.news .banner-hero img {
     width: 100%;
 }
 
+section.news .banner-hero .banner-hero__content {
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    top: 50%;
+    text-align: center;
+}
+
+section.news .banner-hero .banner-hero__content h1 {
+    margin-bottom: 8px
+}
+@media (min-width: 992px) {
+    section.news .banner-hero .banner-hero__content h1 {
+        margin-bottom: 24px
+    }
+}
+
 section.news .tab-content a {
     position: relative;
     margin-right: 4.8rem;
