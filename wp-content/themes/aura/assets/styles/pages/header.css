@@ -135,7 +135,7 @@
     text-align: left;
 }
 .navbar .nav-menu .nav-item .dropdown-menu .dropdown-item {
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 8px 0;
     color: var(--aura-white);
     transition: background-color 0.35s ease-in-out;

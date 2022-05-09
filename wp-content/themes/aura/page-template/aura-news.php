@@ -71,7 +71,7 @@ $thePostArr = query_posts($args);
                         $category = get_term_by('slug', $cat, 'category');
                         ?>
                         <div class="tab-content">
-                            <a href="/?category=<?php echo $category->slug ?>"
+                            <a href="<?php echo $category->slug ?>"
                                class="h4 text-decoration-none
                                <?php
                                if(!isset($_GET['category']) && $key == 0) {

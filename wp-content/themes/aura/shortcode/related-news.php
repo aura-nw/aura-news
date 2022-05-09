@@ -7,6 +7,9 @@ function createRelatedNews($attr)
     $args = [
         'posts_per_page'   => 4,
         'post_type' => 'news',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
         'tax_query' => [
             [
                 'taxonomy' => 'category',

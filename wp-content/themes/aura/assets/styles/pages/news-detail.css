@@ -227,6 +227,13 @@ section.news-details .tags {
     }
 }
 
+@media (max-width: 991.99px) {
+    .news-details .content.body img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 .news-details .content.body h1,
 .news-details .content.body h2,
 .news-details .content.body h3,

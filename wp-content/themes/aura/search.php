@@ -55,7 +55,7 @@
                                         foreach ($cats as $cat) {
                                             ?>
                                             <!-- Print category -->
-                                            <span class="aura-tag mt-3 mt-sm-0"><?php echo $cat->name; ?></span>
+                                            <a href="/<?php echo $cat->slug ?>" class="aura-tag mt-3 mt-sm-0"><?php echo $cat->name; ?></a>
                                             <?php
                                         }
                                         ?>

@@ -12,12 +12,12 @@
             </div>
             <div class="col-12 col-lg-6 footer__contact d-flex d-lg-block text-lg-center text-xl-start">
                 <div class="row w-100 px-lg-5">
-                        <div class="col-6 col-md-3">
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
                             <a href="/" class="body contact__title">Home</a>
                         </div>
 
-                        <div class="col-6 col-md-3">
-                            <a class="body contact__title" href="/announcement/?category=news">News</a>
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
+                            <a class="body contact__title" href="/breaking-news">News</a>
                         </div>
 
                         <?php echo footer_custom_main_menu(); ?>
