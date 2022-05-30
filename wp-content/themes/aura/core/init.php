@@ -232,3 +232,52 @@ function footer_custom_main_menu() {
     }
     echo $menu_list;
 }
+
+function more_post_ajax(){
+    $offset = $_GET["offset"];
+    header("Content-Type: text/html");
+
+    $args = array(
+        'post_type' => 'news',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
+        'suppress_filters' => false,
+        'offset' => $offset,
+        'posts_per_page' => 6,
+    );
+    $thePostArr = query_posts($args);
+    $dataArr = [];
+
+    if (have_posts()) {
+        while ( have_posts() ) : the_post();
+            $post_title = get_the_title();
+            $post_link = get_the_permalink();
+            $img = get_the_post_thumbnail_url();
+            $date = get_the_date();
+            $excerpt = get_the_excerpt();
+            $cats =  get_the_terms(get_the_ID(), 'category');
+            $catArr = [];
+            foreach ($cats as $cat) {
+                $catObj = (object) array(
+                    'name' => $cat->name,
+                    'slug' => $cat->slug,
+                );
+                array_push($catArr, $catObj);
+            }
+            $dataObj = (object) array(
+                'title' => $post_title,
+                'link' => $post_link,
+                'imgUrl' => $img,
+                'cats' => $catArr,
+                'date' => $date,
+                'excerpt' => $excerpt,
+            );
+            array_push($dataArr, $dataObj);
+        endwhile;
+    }
+    echo json_encode($dataArr);
+    exit;
+}
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');

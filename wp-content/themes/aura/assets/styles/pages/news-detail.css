@@ -203,8 +203,13 @@ section.news-details .tags {
 }
 
 .news-details .content.body p {
-    color: #959EB2;
+    color: #DDDDDD;
     margin-bottom: 16px;
+}
+
+.news-details .content.body ul li, .news-details .content.body ol li {
+    color: #DDDDDD;
+    margin-bottom: 8px;
 }
 
 .news-details .content.body a {
@@ -231,6 +236,10 @@ section.news-details .tags {
     .news-details .content.body img {
         max-width: 100%;
         height: auto;
+    }
+    .news-details .content.body iframe  {
+        max-width: 100%;
+        height: 300px;
     }
 }
 

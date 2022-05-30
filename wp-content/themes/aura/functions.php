@@ -15,6 +15,7 @@ require_once(get_template_directory() . '/core/init.php');
  * Include post-type
  */
 include_once(get_template_directory() . '/post-type/pt-news.php');
+include_once(get_template_directory() . '/post-type/pt-faqs.php');
 /*
  * Include short-code
  */

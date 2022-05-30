@@ -120,9 +120,12 @@ h4, .h4 {
     line-height: unset !important;
 }
 .news-details .content.body h4, .insight-h4,
-.news-details .content.body p {
+.news-details .content.body ul, .news-details .content.body ul li, .news-details .content.body ol, .news-details .content.body ol li,
+.news-details .content.body strong,
+.news-details .content.body em,
+.news-details .content.body p, .news-details .content.body a {
     font-size: 1.6rem !important;
-    line-height: 2.4rem !important;
+    line-height: 2.8rem !important;
 }
 .news-details .content.body h5 {
     font-size: 1.4rem !important;

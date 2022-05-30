@@ -31,10 +31,10 @@ while (have_posts()) :
                         }
                         ?>
                     </div>
-                    <!-- P publish date -->
+                    <!-- Publish date -->
                     <span class="text--light-gray mt-3 mt-sm-0"><?php echo get_the_date() ?></span>
                 </div>
-                <div class="d-lg-none mt-3 mb-5"><?php echo do_shortcode("[news_share id='156']") ?></div>
+                <div class="d-lg-none mt-3 mb-5"><?php echo do_shortcode("[news_share id='" . get_the_ID() . "']") ?></div>
             </div>
         </div>
         <div class="row mt-2">
@@ -79,7 +79,7 @@ while (have_posts()) :
                 ?>
             </div>
             <div class="col-12 col-lg-3 ps-lg-5 mt-5 mt-lg-0">
-                <div class="mb-5 d-none d-lg-block"><?php echo do_shortcode("[news_share id='156']") ?></div>
+                <div class="mb-5 d-none d-lg-block"><?php echo do_shortcode("[news_share id='" . get_the_ID() . "']") ?></div>
                 <div class="mt-3"><?php echo do_shortcode("[news_related id='" . get_the_ID() . "']") ?></div>
             </div>
         </div>

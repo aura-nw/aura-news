@@ -13,6 +13,7 @@ Textdomain: aura
 @import "assets/styles/_reboot.css";
 @import "assets/styles/_typo.css";
 @import "assets/styles/form.css";
+@import "assets/styles/button.css";
 @import "assets/styles/icons.css";
 @import "assets/styles/pages/header.css";
 @import "assets/styles/pages/footer.css";
@@ -20,6 +21,7 @@ Textdomain: aura
 @import "assets/styles/pages/news.css";
 @import "assets/styles/pages/news-category.css";
 @import "assets/styles/pages/search.css";
+@import "assets/styles/pages/faqs.css";
 a:hover, a:focus, button:hover, button:focus {
     text-decoration: none;
     outline: none;
